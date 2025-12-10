@@ -112,7 +112,15 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 2. Import project in [Vercel](https://vercel.com)
 3. Add environment variables:
    - `DATABASE_URL` - Your PostgreSQL connection string
+   - `NEXT_PUBLIC_POS_DEMO_URL` - URL untuk demo POS System (contoh: https://pos-system.vercel.app/login)
+   - `NEXT_PUBLIC_SITE_URL` - Your portfolio URL (optional)
 4. Deploy!
+
+**Mengubah Link Setelah Deploy**: 
+- Buka Settings → Environment Variables di Vercel dashboard
+- Update nilai `NEXT_PUBLIC_POS_DEMO_URL` dengan URL baru
+- Redeploy aplikasi (atau tunggu auto-redeploy jika ada perubahan)
+- Link akan otomatis terupdate tanpa perlu mengubah kode!
 
 ### Environment Variables
 
@@ -120,6 +128,9 @@ Make sure to set these in your deployment platform:
 
 - `DATABASE_URL` - PostgreSQL connection string
 - `NEXT_PUBLIC_SITE_URL` - Your site URL (optional, for SEO)
+- `NEXT_PUBLIC_POS_DEMO_URL` - URL untuk demo POS System (optional, default: http://localhost:3001/login)
+
+**Catatan Penting**: Semua link demo project bisa diubah dengan mudah melalui environment variables tanpa perlu mengubah kode. Setelah deploy, cukup update environment variable di platform deployment Anda (Vercel, Netlify, dll) dan aplikasi akan otomatis menggunakan URL baru setelah rebuild.
 
 ## 📄 Pages
 

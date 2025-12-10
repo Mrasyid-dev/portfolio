@@ -111,6 +111,33 @@ const projects = [
     },
     githubLink: 'https://github.com/rasyid-hidayat/api-gateway',
   },
+  {
+    title: {
+      id: 'Point of Sale (POS) System',
+      en: 'Point of Sale (POS) System',
+    },
+    tools: ['Go (Golang)', 'Next.js', 'PostgreSQL', 'Docker', 'RESTful API', 'TypeScript'],
+    problem: {
+      id:
+        'Kebutuhan sistem POS yang modern, scalable, dan mudah digunakan untuk mengelola transaksi penjualan, inventori, dan laporan keuangan secara real-time.',
+      en:
+        'Need for a modern, scalable, and user-friendly POS system to manage sales transactions, inventory, and financial reports in real-time.',
+    },
+    solution: {
+      id:
+        'Membangun sistem POS full-stack menggunakan Go (Golang) untuk backend dengan arsitektur RESTful API dan Next.js untuk frontend. Mengimplementasikan autentikasi JWT, manajemen produk dan inventori, sistem transaksi penjualan, dan dashboard laporan. Menggunakan PostgreSQL untuk database dan Docker untuk containerization.',
+      en:
+        'Built a full-stack POS system using Go (Golang) for backend with RESTful API architecture and Next.js for frontend. Implemented JWT authentication, product and inventory management, sales transaction system, and reporting dashboard. Used PostgreSQL for database and Docker for containerization.',
+    },
+    impact: {
+      id:
+        'Sistem POS yang efisien dengan waktu respons cepat, antarmuka yang intuitif, dan kemampuan untuk menangani transaksi real-time. Mendukung multi-user dengan role-based access control dan menyediakan laporan penjualan yang komprehensif.',
+      en:
+        'Efficient POS system with fast response times, intuitive interface, and ability to handle real-time transactions. Supports multi-user with role-based access control and provides comprehensive sales reports.',
+    },
+    demoLink: process.env.NEXT_PUBLIC_POS_DEMO_URL || 'http://localhost:3001/login',
+    githubLink: 'https://github.com/rasyid-hidayat/pos-system',
+  },
 ]
 
 export default function ProjectsPage() {
@@ -136,6 +163,7 @@ export default function ProjectsPage() {
                 solution={typeof project.solution === 'string' ? project.solution : project.solution[language]}
                 impact={typeof project.impact === 'string' ? project.impact : project.impact[language]}
                 githubLink={project.githubLink}
+                demoLink={project.demoLink}
               />
             ))}
           </div>

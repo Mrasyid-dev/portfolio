@@ -82,6 +82,7 @@ export const translations = {
       problem: 'Masalah',
       solution: 'Solusi',
       impact: 'Dampak',
+      viewDemo: 'Demo',
       viewGitHub: 'Lihat di GitHub →',
     },
     // Experience Page
@@ -202,6 +203,7 @@ export const translations = {
       problem: 'Problem',
       solution: 'Solution',
       impact: 'Impact',
+      viewDemo: 'Demo',
       viewGitHub: 'View on GitHub →',
     },
     // Experience Page

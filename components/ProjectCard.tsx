@@ -10,6 +10,7 @@ interface ProjectCardProps {
   solution: string
   impact: string
   githubLink?: string
+  demoLink?: string
 }
 
 export default function ProjectCard({
@@ -19,6 +20,7 @@ export default function ProjectCard({
   solution,
   impact,
   githubLink,
+  demoLink,
 }: ProjectCardProps) {
   const { t } = useLanguage()
   
@@ -60,16 +62,28 @@ export default function ProjectCard({
         </div>
       </div>
 
-      {githubLink && (
-        <a
-          href={githubLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-6 inline-block text-navy-700 hover:text-navy-900 font-semibold"
-        >
-          {t.projects.viewGitHub}
-        </a>
-      )}
+      <div className="mt-6 flex gap-4">
+        {demoLink && (
+          <a
+            href={demoLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-navy-700 text-white px-6 py-2 rounded-lg hover:bg-navy-900 font-semibold transition-colors"
+          >
+            {t.projects.viewDemo}
+          </a>
+        )}
+        {githubLink && (
+          <a
+            href={githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block text-navy-700 hover:text-navy-900 font-semibold"
+          >
+            {t.projects.viewGitHub}
+          </a>
+        )}
+      </div>
     </motion.div>
   )
 }

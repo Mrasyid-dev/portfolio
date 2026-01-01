@@ -85,7 +85,7 @@ const projects = [
       en:
         'Demonstrates understanding of database optimization and backend architecture for enterprise systems.',
     },
-    githubLink: 'https://github.com/rasyid-hidayat/erp-system',
+    githubLink: 'https://github.com/Mrasyid-dev/erp-system',
   },
   {
     title: {
@@ -111,7 +111,7 @@ const projects = [
       en:
         'Demonstrates ability in building backend API and database management for complex applications.',
     },
-    githubLink: 'https://github.com/rasyid-hidayat/ecommerce-api',
+    githubLink: 'https://github.com/Mrasyid-dev/ecommerce-api',
   },
   {
     title: {
@@ -137,7 +137,7 @@ const projects = [
       en:
         'Demonstrates understanding of microservices architecture and backend patterns for distributed systems.',
     },
-    githubLink: 'https://github.com/rasyid-hidayat/api-gateway',
+    githubLink: 'https://github.com/Mrasyid-dev/api-gateway',
   },
 ]
 

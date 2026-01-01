@@ -11,9 +11,9 @@ export const siteConfig = {
 
   // Contact Information
   contact: {
-    email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'rasyid.hidayat@example.com',
-    linkedin: process.env.NEXT_PUBLIC_CONTACT_LINKEDIN || 'https://linkedin.com/in/rasyid-hidayat',
-    github: process.env.NEXT_PUBLIC_CONTACT_GITHUB || 'https://github.com/rasyid-hidayat',
+    email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'rasyidh55@gmail.com',
+    linkedin: process.env.NEXT_PUBLIC_CONTACT_LINKEDIN || 'https://www.linkedin.com/in/mrasyid-hidayat-70858a236/',
+    github: process.env.NEXT_PUBLIC_CONTACT_GITHUB || 'https://github.com/Mrasyid-dev',
     phone: process.env.NEXT_PUBLIC_CONTACT_PHONE || '', // Optional
     website: process.env.NEXT_PUBLIC_CONTACT_WEBSITE || '', // Optional
   },

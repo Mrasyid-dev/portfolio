@@ -9,27 +9,81 @@ import { useLanguage } from '@/contexts/LanguageContext'
 const projects = [
   {
     title: {
+      id: 'Point of Sale (POS) System',
+      en: 'Point of Sale (POS) System',
+    },
+    tools: ['Go (Golang)', 'Next.js', 'PostgreSQL', 'Docker', 'RESTful API', 'TypeScript'],
+    problem: {
+      id:
+        'Perancangan sistem POS yang menyerupai kebutuhan enterprise, dengan fokus pada stabilitas backend, konsistensi data transaksi, dan keandalan sistem saat menangani operasi bisnis harian.',
+      en:
+        'Designing a POS system that resembles enterprise requirements, with focus on backend stability, transaction data consistency, and system reliability when handling daily business operations.',
+    },
+    solution: {
+      id:
+        'Membangun sistem POS dengan backend Go (Golang) yang menekankan validasi data yang ketat, transaksi database yang aman, dan manajemen error yang robust. Mengimplementasikan struktur database yang konsisten untuk transaksi, inventori, dan laporan. Sistem dirancang dengan pendekatan enterprise-style untuk memastikan integritas data dan stabilitas backend.',
+      en:
+        'Built a POS system with Go (Golang) backend that emphasizes strict data validation, secure database transactions, and robust error handling. Implemented consistent database structure for transactions, inventory, and reports. System designed with enterprise-style approach to ensure data integrity and backend stability.',
+    },
+    impact: {
+      id:
+        'Arsitektur backend yang stabil dengan fokus pada konsistensi data dan penanganan transaksi yang dapat diandalkan. Sistem dirancang untuk mendukung skenario enterprise seperti validasi data multi-layer, penanganan concurrency, dan struktur yang siap untuk integrasi dengan sistem lain.',
+      en:
+        'Stable backend architecture with focus on data consistency and reliable transaction handling. System designed to support enterprise scenarios such as multi-layer data validation, concurrency handling, and structure ready for integration with other systems.',
+    },
+    demoLink: process.env.NEXT_PUBLIC_POS_DEMO_URL || 'http://localhost:3001/login',
+    githubLink: 'https://github.com/SeeFun69/pos-system',
+  },
+  {
+    title: {
+      id: 'Financial Reporting System',
+      en: 'Financial Reporting System',
+    },
+    tools: ['Go (Golang)', 'Next.js', 'PostgreSQL', 'Docker', 'TypeScript', 'React Query'],
+    problem: {
+      id:
+        'Perancangan sistem pelaporan keuangan yang menyerupai kebutuhan enterprise, dengan fokus pada keandalan data, konsistensi perhitungan, dan stabilitas proses pembuatan laporan yang kompleks.',
+      en:
+        'Designing a financial reporting system that resembles enterprise requirements, with focus on data reliability, calculation consistency, and stability of complex report generation processes.',
+    },
+    solution: {
+      id:
+        'Membangun sistem pelaporan dengan backend Go (Golang) yang mengoptimalkan query SQL untuk data-intensive operations, mengimplementasikan validasi data yang ketat, dan memastikan konsistensi perhitungan keuangan. Sistem dirancang dengan struktur database yang efisien dan pendekatan enterprise-style untuk handling data besar dan kompleksitas perhitungan.',
+      en:
+        'Built a reporting system with Go (Golang) backend that optimizes SQL queries for data-intensive operations, implements strict data validation, and ensures financial calculation consistency. System designed with efficient database structure and enterprise-style approach for handling large data and calculation complexity.',
+    },
+    impact: {
+      id:
+        'Backend yang dirancang untuk menangani proses pelaporan yang kompleks dengan fokus pada konsistensi data dan stabilitas sistem. Struktur dan pendekatan yang digunakan menyerupai kebutuhan enterprise untuk sistem pelaporan yang dapat diandalkan.',
+      en:
+        'Backend designed to handle complex reporting processes with focus on data consistency and system stability. Structure and approach used resemble enterprise requirements for reliable reporting systems.',
+    },
+    demoLink: process.env.NEXT_PUBLIC_FINANCIAL_DEMO_URL || 'http://localhost:3002/login',
+    githubLink: 'https://github.com/SeeFun69/financial-reporting-system',
+  },
+  {
+    title: {
       id: 'Enterprise Resource Planning System',
       en: 'Enterprise Resource Planning System',
     },
     tools: ['Java', 'Spring Boot', 'PostgreSQL', 'JSF', 'PrimeFaces'],
     problem: {
       id:
-        'Sistem legacy dengan performa buruk, eksekusi query lambat, dan kesulitan dalam scaling untuk menangani peningkatan beban pengguna.',
+        'Studi kasus untuk mengoptimalkan performa sistem enterprise, termasuk perbaikan query SQL dan struktur database.',
       en:
-        'A legacy system with poor performance, slow query execution, and difficulty in scaling to handle increasing user load.',
+        'Case study for optimizing enterprise system performance, including SQL query improvements and database structure.',
     },
     solution: {
       id:
-        'Mendesain ulang skema database dengan indexing yang tepat, mengoptimalkan query SQL, dan mengimplementasikan arsitektur microservices Spring Boot. Membuat RESTful API dan meningkatkan frontend dengan komponen PrimeFaces.',
+        'Mengimplementasikan optimasi database dengan indexing dan query tuning. Menggunakan Spring Boot untuk struktur backend yang terorganisir.',
       en:
-        'Redesigned the database schema with proper indexing, optimized SQL queries, and implemented Spring Boot microservices architecture. Created RESTful APIs and improved frontend with PrimeFaces components.',
+        'Implemented database optimization with indexing and query tuning. Used Spring Boot for organized backend structure.',
     },
     impact: {
       id:
-        'Mengurangi waktu eksekusi query sebesar 70%, meningkatkan waktu respons sistem sebesar 60%, dan memungkinkan horizontal scaling untuk mendukung 3x lebih banyak pengguna bersamaan.',
+        'Mendemonstrasikan pemahaman tentang optimasi database dan arsitektur backend untuk sistem enterprise.',
       en:
-        'Reduced query execution time by 70%, improved system response time by 60%, and enabled horizontal scaling to support 3x more concurrent users.',
+        'Demonstrates understanding of database optimization and backend architecture for enterprise systems.',
     },
     githubLink: 'https://github.com/rasyid-hidayat/erp-system',
   },
@@ -41,50 +95,23 @@ const projects = [
     tools: ['Java', 'Spring Boot', 'PostgreSQL', 'Docker', 'RESTful API'],
     problem: {
       id:
-        'Kebutuhan sistem backend yang kuat dan scalable untuk menangani transaksi volume tinggi, manajemen inventori, dan pemrosesan pesanan.',
+        'Studi kasus untuk membangun backend API dengan fokus pada struktur yang scalable dan manajemen data.',
       en:
-        'Need for a robust, scalable backend system to handle high-volume transactions, inventory management, and order processing.',
+        'Case study for building backend API with focus on scalable structure and data management.',
     },
     solution: {
       id:
-        'Membangun arsitektur berbasis microservices menggunakan Spring Boot dengan database PostgreSQL. Mengimplementasikan stored procedures untuk logika bisnis yang kompleks, mengoptimalkan query database, dan mengcontainerisasi aplikasi dengan Docker.',
+        'Mengimplementasikan RESTful API menggunakan Spring Boot dengan PostgreSQL. Menggunakan stored procedures untuk logika bisnis dan containerization dengan Docker.',
       en:
-        'Built a microservices-based architecture using Spring Boot with PostgreSQL database. Implemented stored procedures for complex business logic, optimized database queries, and containerized the application with Docker.',
+        'Implemented RESTful API using Spring Boot with PostgreSQL. Used stored procedures for business logic and containerization with Docker.',
     },
     impact: {
       id:
-        'Berhasil menangani 10.000+ transaksi harian, mengurangi waktu respons API menjadi di bawah 200ms, dan mencapai uptime 99.9%.',
+        'Mendemonstrasikan kemampuan dalam membangun backend API dan manajemen database untuk aplikasi yang kompleks.',
       en:
-        'Successfully handles 10,000+ daily transactions, reduced API response time to under 200ms, and achieved 99.9% uptime.',
+        'Demonstrates ability in building backend API and database management for complex applications.',
     },
     githubLink: 'https://github.com/rasyid-hidayat/ecommerce-api',
-  },
-  {
-    title: {
-      id: 'Financial Reporting System',
-      en: 'Financial Reporting System',
-    },
-    tools: ['Go (Golang)', 'Next.js', 'PostgreSQL', 'Docker', 'TypeScript', 'React Query'],
-    problem: {
-      id:
-        'Laporan keuangan yang kompleks membutuhkan waktu 5-10 menit untuk dihasilkan, menyebabkan keterlambatan dalam pengambilan keputusan bisnis.',
-      en:
-        'Complex financial reports were taking 5-10 minutes to generate, causing delays in business decision-making.',
-    },
-    solution: {
-      id:
-        'Mengoptimalkan query database menggunakan teknik SQL lanjutan, membuat stored procedures yang efisien, dan mengimplementasikan mekanisme caching. Merefaktor reporting engine untuk memproses data secara paralel.',
-      en:
-        'Optimized database queries using advanced SQL techniques, created efficient stored procedures, and implemented caching mechanisms. Refactored the reporting engine to process data in parallel.',
-    },
-    impact: {
-      id:
-        'Waktu pembuatan laporan berkurang dari 5-10 menit menjadi di bawah 30 detik, memungkinkan analisis keuangan real-time dan pengambilan keputusan yang lebih cepat.',
-      en:
-        'Report generation time reduced from 5-10 minutes to under 30 seconds, enabling real-time financial analysis and faster decision-making.',
-    },
-    demoLink: process.env.NEXT_PUBLIC_FINANCIAL_DEMO_URL || 'http://localhost:3002/login',
-    githubLink: 'https://github.com/rasyid-hidayat/financial-reporting',
   },
   {
     title: {
@@ -94,50 +121,23 @@ const projects = [
     tools: ['Java', 'Spring Boot', 'PostgreSQL', 'Docker', 'Microservices'],
     problem: {
       id:
-        'Beberapa layanan membutuhkan autentikasi terpusat, rate limiting, dan routing permintaan tanpa menciptakan tight coupling.',
+        'Studi kasus untuk memahami arsitektur microservices dan pola API Gateway.',
       en:
-        'Multiple services needed centralized authentication, rate limiting, and request routing without creating tight coupling.',
+        'Case study for understanding microservices architecture and API Gateway patterns.',
     },
     solution: {
       id:
-        'Mengembangkan API Gateway menggunakan Spring Boot yang menangani autentikasi, routing permintaan, dan load balancing. Terintegrasi dengan PostgreSQL untuk service registry dan mengimplementasikan pola circuit breaker untuk resilience.',
+        'Mengimplementasikan API Gateway menggunakan Spring Boot dengan service registry dan circuit breaker pattern.',
       en:
-        'Developed an API Gateway using Spring Boot that handles authentication, request routing, and load balancing. Integrated with PostgreSQL for service registry and implemented circuit breaker pattern for resilience.',
+        'Implemented API Gateway using Spring Boot with service registry and circuit breaker pattern.',
     },
     impact: {
       id:
-        'Autentikasi terpusat mengurangi waktu pengembangan sebesar 40%, meningkatkan keandalan sistem dengan automatic failover, dan menyederhanakan manajemen layanan.',
+        'Mendemonstrasikan pemahaman tentang arsitektur microservices dan pola backend untuk sistem terdistribusi.',
       en:
-        'Centralized authentication reduced development time by 40%, improved system reliability with automatic failover, and simplified service management.',
+        'Demonstrates understanding of microservices architecture and backend patterns for distributed systems.',
     },
     githubLink: 'https://github.com/rasyid-hidayat/api-gateway',
-  },
-  {
-    title: {
-      id: 'Point of Sale (POS) System',
-      en: 'Point of Sale (POS) System',
-    },
-    tools: ['Go (Golang)', 'Next.js', 'PostgreSQL', 'Docker', 'RESTful API', 'TypeScript'],
-    problem: {
-      id:
-        'Kebutuhan sistem POS yang modern, scalable, dan mudah digunakan untuk mengelola transaksi penjualan, inventori, dan laporan keuangan secara real-time.',
-      en:
-        'Need for a modern, scalable, and user-friendly POS system to manage sales transactions, inventory, and financial reports in real-time.',
-    },
-    solution: {
-      id:
-        'Membangun sistem POS full-stack menggunakan Go (Golang) untuk backend dengan arsitektur RESTful API dan Next.js untuk frontend. Mengimplementasikan autentikasi JWT, manajemen produk dan inventori, sistem transaksi penjualan, dan dashboard laporan. Menggunakan PostgreSQL untuk database dan Docker untuk containerization.',
-      en:
-        'Built a full-stack POS system using Go (Golang) for backend with RESTful API architecture and Next.js for frontend. Implemented JWT authentication, product and inventory management, sales transaction system, and reporting dashboard. Used PostgreSQL for database and Docker for containerization.',
-    },
-    impact: {
-      id:
-        'Sistem POS yang efisien dengan waktu respons cepat, antarmuka yang intuitif, dan kemampuan untuk menangani transaksi real-time. Mendukung multi-user dengan role-based access control dan menyediakan laporan penjualan yang komprehensif.',
-      en:
-        'Efficient POS system with fast response times, intuitive interface, and ability to handle real-time transactions. Supports multi-user with role-based access control and provides comprehensive sales reports.',
-    },
-    demoLink: process.env.NEXT_PUBLIC_POS_DEMO_URL || 'http://localhost:3001/login',
-    githubLink: 'https://github.com/rasyid-hidayat/pos-system',
   },
 ]
 

@@ -8,29 +8,37 @@ import { useLanguage } from '@/contexts/LanguageContext'
 
 const skillsData = [
   {
-    categoryKey: 'languages',
-    skills: ['Java', 'Go (Golang)', 'SQL'],
+    categoryKey: 'backend',
+    skills: [
+      'Java (Spring Boot, internal framework jLeaf)',
+      'SQL (transactional query, stored function, optimization)',
+      'Golang (project-based, backend POS Mobile)',
+    ],
     icon: '💻',
   },
   {
-    categoryKey: 'frameworks',
-    skills: ['Spring Boot', 'jLeaf', 'Laravel'],
-    icon: '⚙️',
-  },
-  {
-    categoryKey: 'databases',
-    skills: ['PostgreSQL', 'MySQL', 'SQL Query Optimization', 'Hibernate/JPA'],
+    categoryKey: 'database',
+    skills: [
+      'PostgreSQL (stored function, JSON processing, performance tuning)',
+      'MySQL',
+      'Data migration & data correction (mass import, data consistency)',
+    ],
     icon: '🗄️',
   },
   {
-    categoryKey: 'frontend',
-    skills: ['PrimeFaces', 'JSF', 'React', 'Next.js', 'Vue.js'],
-    icon: '🎨',
+    categoryKey: 'messaging',
+    skills: [
+      'ActiveMQ (transaction reprocess, async handling)',
+      'RabbitMQ',
+      'Redis',
+      'Cross-system integration (including database-level integration)',
+    ],
+    icon: '⚙️',
   },
   {
-    categoryKey: 'tools',
-    skills: ['Git', 'Docker', 'Postman', 'IntelliJ IDEA', 'VS Code', 'Redis', 'RabbitMQ'],
-    icon: '🛠️',
+    categoryKey: 'frontend',
+    skills: ['JSF', 'PrimeFaces', 'HTML & basic CSS'],
+    icon: '🎨',
   },
 ]
 

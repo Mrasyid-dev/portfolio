@@ -7,6 +7,7 @@ interface TimelineItemProps {
   title: string
   company: string
   period: string
+  context?: string
   responsibilities: string[]
   achievements?: string[]
   skills: string[]
@@ -40,6 +41,12 @@ export default function Timeline({ items }: { items: TimelineItemProps[] }) {
                 <p className="text-lg text-navy-700 font-semibold">{item.company}</p>
                 <p className="text-gray-500">{item.period}</p>
               </div>
+
+              {item.context && (
+                <div className="mb-4">
+                  <p className="text-gray-700 leading-relaxed">{item.context}</p>
+                </div>
+              )}
 
               <div className="mb-4">
                 <h4 className="font-semibold text-navy-800 mb-2">{t.experience.responsibilities}</h4>

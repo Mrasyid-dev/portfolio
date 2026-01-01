@@ -32,11 +32,11 @@ export const translations = {
         'Selama masa kuliah, saya mempelajari berbagai aspek dalam pengembangan perangkat lunak, mulai dari konsep dasar pemrograman hingga pengembangan aplikasi enterprise. Fokus utama saya adalah pada pengembangan backend dan manajemen database, yang menjadi fondasi kuat untuk karir saya sebagai Backend Developer.',
       aboutMe: 'Tentang Saya',
       aboutMeText1:
-        'Saya adalah seorang Backend Developer yang memiliki passion dalam membangun sistem backend yang efisien, scalable, dan mudah dipelihara. Dengan pengalaman lebih dari 3 tahun di berbagai perusahaan teknologi, saya telah terlibat dalam pengembangan aplikasi enterprise yang kompleks, mulai dari sistem ERP hingga aplikasi finansial.',
+        'Saya adalah seorang Backend Engineer dengan pengalaman bekerja pada sistem enterprise yang berfokus pada stabilitas data, keandalan sistem, dan proses bisnis yang berjalan setiap hari. Dalam pekerjaan saya, saya banyak terlibat dalam pemeliharaan sistem yang sudah berjalan, perbaikan bug, serta penanganan data bermasalah pada sistem berskala besar.',
       aboutMeText2:
-        'Keahlian utama saya terletak pada pengembangan backend menggunakan Java Spring Boot dan Go (Golang), dengan fokus pada optimasi performa database PostgreSQL dan MySQL. Saya terbiasa bekerja dengan berbagai teknologi modern seperti Redis untuk caching, RabbitMQ untuk message queuing, dan Docker untuk containerization.',
+        'Sebagian besar pekerjaan saya berkaitan dengan backend dan database, terutama pada sistem POS yang bersifat business-critical. Saya terbiasa menangani proses validasi data, perbaikan query SQL, serta memastikan data transaksi dan laporan tetap konsisten dan dapat dipercaya oleh pengguna.',
       aboutMeText3:
-        'Selain backend, saya juga memiliki kemampuan dalam pengembangan frontend menggunakan PrimeFaces, JSF, React, dan Next.js. Kombinasi skill ini memungkinkan saya untuk memahami keseluruhan alur pengembangan aplikasi, dari backend hingga frontend integration.',
+        'Selain mengerjakan fitur, saya juga sering terlibat dalam analisis dampak perubahan pada sistem yang sudah berjalan, termasuk perbaikan data existing dan penanganan incident produksi. Pengalaman ini membentuk cara kerja saya yang lebih berhati-hati, terstruktur, dan berorientasi pada stabilitas jangka panjang. Saya memiliki pengalaman menggunakan Java dan Golang dalam konteks backend, serta memahami frontend sebagai bagian pendukung untuk memastikan alur aplikasi berjalan dengan baik. Saat ini, saya terus mengembangkan pemahaman saya tentang sistem backend yang kompleks dan data-intensive melalui pekerjaan profesional maupun personal project.',
       skillsCompetence: 'Keahlian & Kompetensi',
       backendDev: 'Backend Development',
       backendDevDesc:
@@ -65,33 +65,66 @@ export const translations = {
     },
     // Skills Page
     skills: {
-      title: 'Keahlian & Keahlian',
+      title: 'Keahlian',
       subtitle: 'Kompetensi teknis dalam pengembangan backend, manajemen database, dan operasi sistem',
       categories: {
-        languages: 'Bahasa Pemrograman',
-        frameworks: 'Framework',
-        databases: 'Database',
-        frontend: 'Frontend/UI',
-        tools: 'Tools & Teknologi',
+        backend: 'Backend & Programming',
+        database: 'Database & Data Processing',
+        messaging: 'Messaging, Integration & Infrastructure',
+        frontend: 'Frontend (Supporting)',
       },
     },
     // Projects Page
     projects: {
-      title: 'Proyek',
-      subtitle: 'Menampilkan solusi dunia nyata yang dibangun dengan teknologi modern dan best practices',
+      title: 'Proyek Pilihan (Personal Projects)',
+      subtitle: 'Studi kasus personal yang dirancang menyerupai kebutuhan sistem enterprise',
+      personalProjectBadge: 'Personal Project – Enterprise-style Implementation',
       problem: 'Masalah',
       solution: 'Solusi',
       impact: 'Dampak',
       viewDemo: 'Demo',
       viewGitHub: 'Lihat di GitHub →',
     },
+    // Enterprise POS Case Study
+    enterprisePOS: {
+      title: 'Enterprise POS System — Data Reliability & System Stability',
+      contextTitle: 'Context',
+      context: 'Saya bekerja pada sistem POS enterprise yang dikembangkan untuk perusahaan yang bergerak di bidang optik (kacamata, lensa, dan softlens). Sistem ini digunakan untuk mendukung operasional bisnis dan menangani transaksi harian dalam jumlah besar, serta menjadi dasar pelaporan operasional dan keuangan.',
+      problems: {
+        title: 'Masalah',
+        items: [
+          'Transaksi POS gagal terbentuk saat jam sibuk',
+          'Proses impor data massal sangat lambat',
+          'Data yang tidak konsisten berdampak langsung ke laporan bisnis klien',
+        ],
+      },
+      whatIDid: {
+        title: 'Apa yang Saya Lakukan',
+        items: [
+          'Menangani perbaikan dan pemeliharaan backend sistem POS',
+          'Memastikan data transaksi tervalidasi dan tersimpan dengan benar',
+          'Mengoptimalkan proses impor dan perbaikan data bermasalah',
+          'Menangani incident produksi dan memastikan data dapat diproses ulang dengan aman',
+        ],
+      },
+      impact: {
+        title: 'Dampak',
+        items: [
+          'Waktu proses impor data ribuan transaksi berkurang drastis',
+          'Sistem POS lebih stabil saat jam operasional tinggi',
+          'Data laporan menjadi lebih akurat',
+          'Kepercayaan klien terhadap sistem meningkat',
+        ],
+      },
+    },
     // Experience Page
     experience: {
       title: 'Pengalaman Profesional',
       subtitle: 'Membangun sistem yang kuat dan memberikan solusi yang berdampak',
+      context: 'Konteks:',
       responsibilities: 'Tanggung Jawab:',
-      achievements: 'Pencapaian:',
-      skillsUsed: 'Keahlian yang Digunakan:',
+      achievements: 'Kontribusi Utama / Dampak:',
+      skillsUsed: 'Tech Stack:',
     },
     // Contact Page
     contact: {
@@ -153,11 +186,11 @@ export const translations = {
         'During my studies, I learned various aspects of software development, from basic programming concepts to enterprise application development. My main focus was on backend development and database management, which became a strong foundation for my career as a Backend Developer.',
       aboutMe: 'About Me',
       aboutMeText1:
-        'I am a Backend Developer with a passion for building efficient, scalable, and maintainable backend systems. With over 3 years of experience in various technology companies, I have been involved in developing complex enterprise applications, from ERP systems to financial applications.',
+        'I am a Backend Engineer with experience working on enterprise systems that focus on data reliability, system stability, and day-to-day business operations. My work mainly involves maintaining existing systems, fixing bugs, and handling data-related issues in large-scale applications.',
       aboutMeText2:
-        'My main expertise lies in backend development using Java Spring Boot and Go (Golang), with a focus on optimizing PostgreSQL and MySQL database performance. I am familiar with working with various modern technologies such as Redis for caching, RabbitMQ for message queuing, and Docker for containerization.',
+        'Most of my responsibilities are backend and database–oriented, particularly in business-critical POS systems. I regularly work with data validation, SQL query improvements, and ensuring that transaction and reporting data remain accurate and reliable.',
       aboutMeText3:
-        'In addition to backend, I also have skills in frontend development using PrimeFaces, JSF, React, and Next.js. This combination of skills allows me to understand the entire application development flow, from backend to frontend integration.',
+        'In addition to feature development, I am often involved in impact analysis for changes within live systems, including data corrections and production incident handling. These experiences have shaped my approach to be more cautious, structured, and focused on long-term system stability. I have experience using Java and Golang in backend contexts and understand frontend as a supporting layer to ensure application flows work as expected. I continue to deepen my understanding of complex, data-intensive backend systems through both professional work and personal projects.',
       skillsCompetence: 'Skills & Competencies',
       backendDev: 'Backend Development',
       backendDevDesc:
@@ -186,33 +219,66 @@ export const translations = {
     },
     // Skills Page
     skills: {
-      title: 'Skills & Expertise',
+      title: 'Skills',
       subtitle: 'Technical competencies across backend development, database management, and system operations',
       categories: {
-        languages: 'Languages',
-        frameworks: 'Frameworks',
-        databases: 'Databases',
-        frontend: 'Frontend/UI',
-        tools: 'Tools & Technologies',
+        backend: 'Backend & Programming',
+        database: 'Database & Data Processing',
+        messaging: 'Messaging, Integration & Infrastructure',
+        frontend: 'Frontend (Supporting)',
       },
     },
     // Projects Page
     projects: {
-      title: 'Projects',
-      subtitle: 'Showcasing real-world solutions built with modern technologies and best practices',
+      title: 'Selected Projects (Personal Projects)',
+      subtitle: 'Personal case studies designed to resemble enterprise system requirements',
+      personalProjectBadge: 'Personal Project – Enterprise-style Implementation',
       problem: 'Problem',
       solution: 'Solution',
       impact: 'Impact',
       viewDemo: 'Demo',
       viewGitHub: 'View on GitHub →',
     },
+    // Enterprise POS Case Study
+    enterprisePOS: {
+      title: 'Enterprise POS System — Data Reliability & System Stability',
+      contextTitle: 'Context',
+      context: 'I worked on an enterprise POS system developed for a company in the optical industry (glasses, lenses, and soft contact lenses). The system supports business operations, processes high volumes of daily transactions, and serves as the foundation for operational and financial reporting.',
+      problems: {
+        title: 'Problems',
+        items: [
+          'POS transactions failed during peak hours',
+          'Bulk data import processes were extremely slow',
+          'Inconsistent data directly affected business reports',
+        ],
+      },
+      whatIDid: {
+        title: 'What I Did',
+        items: [
+          'Maintained and improved the backend of the POS system',
+          'Ensured transaction data was properly validated and stored',
+          'Optimized bulk data import and data correction processes',
+          'Handled production incidents and safely reprocessed failed data',
+        ],
+      },
+      impact: {
+        title: 'Impact',
+        items: [
+          'Bulk data processing time was significantly reduced',
+          'POS system became more stable during peak usage',
+          'Business reports became more accurate',
+          'Client confidence in the system increased',
+        ],
+      },
+    },
     // Experience Page
     experience: {
       title: 'Professional Experience',
       subtitle: 'Building robust systems and delivering impactful solutions',
+      context: 'Context:',
       responsibilities: 'Responsibilities:',
-      achievements: 'Achievements:',
-      skillsUsed: 'Skills Used:',
+      achievements: 'Key Contributions / Impact:',
+      skillsUsed: 'Tech Stack:',
     },
     // Contact Page
     contact: {

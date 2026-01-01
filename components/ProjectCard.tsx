@@ -32,6 +32,11 @@ export default function ProjectCard({
       transition={{ duration: 0.5 }}
       className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-gray-100"
     >
+      <div className="mb-3">
+        <span className="inline-block px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">
+          {t.projects.personalProjectBadge}
+        </span>
+      </div>
       <h3 className="text-2xl font-bold text-navy-900 mb-4">{title}</h3>
 
       <div className="flex flex-wrap gap-2 mb-4">

@@ -8,6 +8,7 @@ export interface ExperienceItem {
   title: string
   company: string
   period: string
+  context?: string
   responsibilities: string[]
   achievements?: string[]
   skills: string[]

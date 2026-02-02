@@ -53,6 +53,41 @@ export default function EnterpriseCaseStudy() {
             </ul>
           </div>
 
+          {/* Technical Implementation */}
+          <div className="mb-8">
+            <h3 className="text-xl font-bold text-navy-900 mb-4">
+              {t.enterprisePOS.technicalImplementation.title}
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                <h4 className="font-semibold mb-3 text-navy-800">
+                  {t.enterprisePOS.technicalImplementation.sqlOptimization.title}
+                </h4>
+                <ul className="text-sm text-gray-700 space-y-2">
+                  {t.enterprisePOS.technicalImplementation.sqlOptimization.items.map((item, index) => (
+                    <li key={index} className="flex items-start">
+                      <span className="text-navy-600 mr-2">•</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                <h4 className="font-semibold mb-3 text-navy-800">
+                  {t.enterprisePOS.technicalImplementation.systemReliability.title}
+                </h4>
+                <ul className="text-sm text-gray-700 space-y-2">
+                  {t.enterprisePOS.technicalImplementation.systemReliability.items.map((item, index) => (
+                    <li key={index} className="flex items-start">
+                      <span className="text-navy-600 mr-2">•</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
           {/* Impact */}
           <div>
             <h3 className="text-xl font-bold text-navy-900 mb-4">

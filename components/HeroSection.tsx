@@ -45,6 +45,31 @@ export default function HeroSection() {
               {t.hero.description}
             </motion.p>
 
+            {/* Metrics Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.45 }}
+              className="grid grid-cols-2 md:grid-cols-4 gap-4 py-6"
+            >
+              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-4 border border-gray-200">
+                <div className="text-3xl font-bold text-navy-900">{t.hero.metrics.transactions}</div>
+                <div className="text-sm text-gray-600 mt-1">{t.hero.metrics.transactionsLabel}</div>
+              </div>
+              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-4 border border-gray-200">
+                <div className="text-3xl font-bold text-navy-900">{t.hero.metrics.performance}</div>
+                <div className="text-sm text-gray-600 mt-1">{t.hero.metrics.performanceLabel}</div>
+              </div>
+              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-4 border border-gray-200">
+                <div className="text-3xl font-bold text-navy-900">{t.hero.metrics.uptime}</div>
+                <div className="text-sm text-gray-600 mt-1">{t.hero.metrics.uptimeLabel}</div>
+              </div>
+              <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-4 border border-gray-200">
+                <div className="text-3xl font-bold text-navy-900">{t.hero.metrics.errorRate}</div>
+                <div className="text-sm text-gray-600 mt-1">{t.hero.metrics.errorRateLabel}</div>
+              </div>
+            </motion.div>
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

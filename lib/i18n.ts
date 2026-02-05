@@ -20,6 +20,25 @@ export const translations = {
         'Keahlian dalam Java Spring Boot, Golang, PostgreSQL, Optimasi SQL, System Debugging, dan Aplikasi Enterprise.',
       contactMe: 'Hubungi Saya',
       downloadCV: 'Unduh CV',
+      metrics: {
+        transactions: '15K+',
+        transactionsLabel: 'Transaksi/Hari',
+        performance: '95%',
+        performanceLabel: 'Peningkatan Performa',
+        uptime: '99.5%',
+        uptimeLabel: 'Uptime',
+        errorRate: '<0.1%',
+        errorRateLabel: 'Error Rate',
+      },
+    },
+    // Freelance Section
+    freelance: {
+      title: 'Tersedia untuk Proyek Freelance',
+      subtitle: 'Spesialisasi dalam Backend Development, Database Optimization, dan Enterprise System Solutions. Mari bangun sesuatu yang hebat bersama.',
+      getInTouch: 'Hubungi Saya',
+      downloadCV: 'Unduh CV',
+      availability: 'Terbuka untuk proyek jangka pendek dan panjang',
+      location: 'Remote work preferred • Tersedia untuk klien Indonesia dan Internasional',
     },
     // About Page
     about: {
@@ -94,27 +113,52 @@ export const translations = {
         title: 'Masalah',
         items: [
           'Transaksi POS gagal terbentuk saat jam sibuk',
-          'Proses impor data massal sangat lambat',
+          'Proses impor data massal sangat lambat (30 menit untuk batch import)',
           'Data yang tidak konsisten berdampak langsung ke laporan bisnis klien',
         ],
       },
       whatIDid: {
         title: 'Apa yang Saya Lakukan',
         items: [
-          'Menangani perbaikan dan pemeliharaan backend sistem POS',
-          'Memastikan data transaksi tervalidasi dan tersimpan dengan benar',
-          'Mengoptimalkan proses impor dan perbaikan data bermasalah',
-          'Menangani incident produksi dan memastikan data dapat diproses ulang dengan aman',
+          'Menangani perbaikan dan pemeliharaan backend sistem POS enterprise',
+          'Mengoptimalkan query SQL kompleks untuk batch import (15,000+ records)',
+          'Mengimplementasikan stored function PostgreSQL untuk validasi data multi-layer',
+          'Memastikan data transaksi tervalidasi dan tersimpan dengan benar menggunakan transaction rollback',
+          'Mengoptimalkan proses impor data massal dengan indexing dan query tuning',
+          'Menangani incident produksi dan memastikan data dapat diproses ulang dengan aman via ActiveMQ',
+          'Menggunakan EXPLAIN ANALYZE untuk optimasi query performance',
         ],
       },
       impact: {
         title: 'Dampak',
         items: [
-          'Waktu proses impor data ribuan transaksi berkurang drastis',
-          'Sistem POS lebih stabil saat jam operasional tinggi',
-          'Data laporan menjadi lebih akurat',
-          'Kepercayaan klien terhadap sistem meningkat',
+          'Waktu proses impor data berkurang drastis: dari 30 menit menjadi 1 menit (95% improvement)',
+          'Sistem POS lebih stabil saat jam operasional tinggi dengan uptime 99.5%+',
+          'Data laporan menjadi lebih akurat dengan error rate <0.1%',
+          'Berhasil menangani 15,000+ transaksi per hari tanpa error',
+          'Kepercayaan klien terhadap sistem meningkat signifikan',
         ],
+      },
+      technicalImplementation: {
+        title: 'Technical Implementation',
+        sqlOptimization: {
+          title: 'SQL Optimization',
+          items: [
+            'Stored functions untuk validasi multi-layer',
+            'Index optimization untuk query performance',
+            'EXPLAIN ANALYZE untuk query tuning',
+            'Batch processing untuk 15k+ records',
+          ],
+        },
+        systemReliability: {
+          title: 'System Reliability',
+          items: [
+            'Transaction rollback mechanism',
+            'ActiveMQ untuk reprocess failed transactions',
+            'Data validation & consistency checks',
+            'Error handling & logging',
+          ],
+        },
       },
     },
     // Experience Page
@@ -174,6 +218,25 @@ export const translations = {
         'Expertise in Java Spring Boot, Golang, PostgreSQL, SQL Optimization, System Debugging, and Enterprise Applications.',
       contactMe: 'Contact Me',
       downloadCV: 'Download CV',
+      metrics: {
+        transactions: '15K+',
+        transactionsLabel: 'Transactions/Day',
+        performance: '95%',
+        performanceLabel: 'Performance Gain',
+        uptime: '99.5%',
+        uptimeLabel: 'Uptime',
+        errorRate: '<0.1%',
+        errorRateLabel: 'Error Rate',
+      },
+    },
+    // Freelance Section
+    freelance: {
+      title: 'Available for Freelance Projects',
+      subtitle: 'Specialized in Backend Development, Database Optimization, and Enterprise System Solutions. Let\'s build something great together.',
+      getInTouch: 'Get in Touch',
+      downloadCV: 'Download CV',
+      availability: 'Open to both short-term and long-term projects',
+      location: 'Remote work preferred • Available for Indonesian and International clients',
     },
     // About Page
     about: {
@@ -248,27 +311,52 @@ export const translations = {
         title: 'Problems',
         items: [
           'POS transactions failed during peak hours',
-          'Bulk data import processes were extremely slow',
+          'Bulk data import processes were extremely slow (30 minutes for batch import)',
           'Inconsistent data directly affected business reports',
         ],
       },
       whatIDid: {
         title: 'What I Did',
         items: [
-          'Maintained and improved the backend of the POS system',
-          'Ensured transaction data was properly validated and stored',
-          'Optimized bulk data import and data correction processes',
-          'Handled production incidents and safely reprocessed failed data',
+          'Maintained and improved the backend of the enterprise POS system',
+          'Optimized complex SQL queries for batch import (15,000+ records)',
+          'Implemented PostgreSQL stored functions for multi-layer data validation',
+          'Ensured transaction data was properly validated and stored using transaction rollback',
+          'Optimized bulk data import with indexing and query tuning',
+          'Handled production incidents and safely reprocessed failed data via ActiveMQ',
+          'Used EXPLAIN ANALYZE for query performance optimization',
         ],
       },
       impact: {
         title: 'Impact',
         items: [
-          'Bulk data processing time was significantly reduced',
-          'POS system became more stable during peak usage',
-          'Business reports became more accurate',
-          'Client confidence in the system increased',
+          'Data import time drastically reduced: from 30 minutes to 1 minute (95% improvement)',
+          'POS system became more stable during peak hours with 99.5%+ uptime',
+          'Business reports became more accurate with <0.1% error rate',
+          'Successfully handled 15,000+ transactions per day without errors',
+          'Client confidence in the system significantly increased',
         ],
+      },
+      technicalImplementation: {
+        title: 'Technical Implementation',
+        sqlOptimization: {
+          title: 'SQL Optimization',
+          items: [
+            'Stored functions for multi-layer validation',
+            'Index optimization for query performance',
+            'EXPLAIN ANALYZE for query tuning',
+            'Batch processing for 15k+ records',
+          ],
+        },
+        systemReliability: {
+          title: 'System Reliability',
+          items: [
+            'Transaction rollback mechanism',
+            'ActiveMQ for reprocessing failed transactions',
+            'Data validation & consistency checks',
+            'Error handling & logging',
+          ],
+        },
       },
     },
     // Experience Page

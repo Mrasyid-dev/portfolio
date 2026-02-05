@@ -5,12 +5,14 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { siteConfig } from '@/lib/config'
 import { useLanguage } from '@/contexts/LanguageContext'
+import Scene3D from './Scene3D'
 
 export default function HeroSection() {
   const [imageError, setImageError] = useState(false)
   const { t } = useLanguage()
+  
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-gray-50 to-navy-50 pt-16">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-gray-50 to-navy-50 dark:from-navy-950 dark:via-navy-900 dark:to-navy-800 pt-16 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -24,7 +26,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy-900 leading-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy-900 dark:text-white leading-tight"
             >
               {siteConfig.name}
             </motion.h1>
@@ -32,7 +34,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-2xl md:text-3xl text-navy-700 font-semibold"
+              className="text-2xl md:text-3xl text-navy-700 dark:text-navy-100 font-semibold"
             >
               {t.hero.title}
             </motion.h2>
@@ -40,10 +42,29 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-lg text-gray-600 leading-relaxed"
+              className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed"
             >
               {t.hero.description}
             </motion.p>
+
+            {/* Metrics Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.45 }}
+              className="grid grid-cols-2 md:grid-cols-4 gap-4 py-6"
+            >
+              {Object.entries(t.hero.metrics).map(([key, value], index) => {
+                  if (key.includes('Label')) return null;
+                  const labelKey = `${key}Label` as keyof typeof t.hero.metrics;
+                  return (
+                    <div key={key} className="text-center bg-white/50 dark:bg-navy-800/50 backdrop-blur-sm rounded-xl p-4 border border-gray-200 dark:border-navy-700 hover:scale-105 transition-transform duration-300">
+                        <div className="text-3xl font-bold text-navy-900 dark:text-white">{value}</div>
+                        <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">{t.hero.metrics[labelKey]}</div>
+                    </div>
+                  )
+              })}
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -53,53 +74,28 @@ export default function HeroSection() {
             >
               <Link
                 href="/contact"
-                className="px-8 py-3 bg-navy-900 text-white rounded-2xl font-semibold hover:bg-navy-800 transition-colors text-center shadow-lg hover:shadow-xl"
+                className="px-8 py-3 bg-navy-900 text-white dark:bg-white dark:text-navy-900 rounded-2xl font-semibold hover:bg-navy-800 dark:hover:bg-gray-100 transition-colors text-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 {t.hero.contactMe}
               </Link>
               <a
                 href={siteConfig.cvFile}
                 download
-                className="px-8 py-3 bg-white text-navy-900 border-2 border-navy-900 rounded-2xl font-semibold hover:bg-navy-50 transition-colors text-center shadow-lg hover:shadow-xl"
+                className="px-8 py-3 bg-white text-navy-900 border-2 border-navy-900 dark:bg-transparent dark:text-white dark:border-white rounded-2xl font-semibold hover:bg-navy-50 dark:hover:bg-white/10 transition-colors text-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 {t.hero.downloadCV}
               </a>
             </motion.div>
           </motion.div>
 
-          {/* Right Image */}
+          {/* Right 3D Scene */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex justify-center"
+            className="flex justify-center h-[500px]"
           >
-            <div className="relative w-80 h-80 lg:w-96 lg:h-96">
-              <div className="absolute inset-0 bg-gradient-to-br from-navy-400 to-navy-600 rounded-2xl transform rotate-6"></div>
-              <div className="relative w-full h-full rounded-2xl shadow-2xl overflow-hidden border-4 border-white">
-                {/* GANTI FOTO PROFILE DI SINI */}
-                {/* 1. Simpan foto Anda di folder public/ dengan nama profile.jpg */}
-                {/* 2. Jika nama file berbeda, ganti "profile.jpg" di bawah ini */}
-                {!imageError ? (
-                  <img
-                    src={siteConfig.profileImage}
-                    alt={siteConfig.name}
-                    className="w-full h-full object-cover"
-                    onError={() => setImageError(true)}
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-navy-100 to-navy-200">
-                    <span className="text-6xl font-bold text-navy-600">
-                      {siteConfig.name
-                        .split(' ')
-                        .map((n) => n[0])
-                        .join('')
-                        .toUpperCase()}
-                    </span>
-                  </div>
-                )}
-              </div>
-            </div>
+            <Scene3D />
           </motion.div>
         </div>
       </div>

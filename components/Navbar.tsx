@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/contexts/LanguageContext'
+import { ThemeToggle } from '@/components/ThemeToggle'
 
 const navItems = [
   { key: 'home', href: '/' },
@@ -36,47 +37,56 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md' : 'bg-white/80 backdrop-blur-sm'
+        isScrolled
+          ? 'bg-white shadow-md dark:bg-navy-900 dark:shadow-navy-800'
+          : 'bg-white/80 backdrop-blur-sm dark:bg-navy-900/80'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="text-xl font-bold text-navy-900">
+          <Link href="/" className="text-xl font-bold text-navy-900 dark:text-white">
             MRH
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <Link
                 key={item.key}
                 href={item.href}
-                className="text-navy-700 hover:text-navy-900 font-medium transition-colors"
+                className="text-navy-700 hover:text-navy-900 font-medium transition-colors dark:text-gray-300 dark:hover:text-white"
               >
                 {t.nav[item.key as keyof typeof t.nav]}
               </Link>
             ))}
-            {/* Language Switcher */}
-            <button
-              onClick={toggleLanguage}
-              className="px-3 py-1.5 bg-navy-100 text-navy-700 rounded-lg font-medium hover:bg-navy-200 transition-colors text-sm"
-              aria-label="Toggle language"
-            >
-              {language === 'id' ? 'EN' : 'ID'}
-            </button>
+            
+            <div className="flex items-center space-x-2 pl-4 border-l border-gray-200 dark:border-navy-700">
+              <ThemeToggle />
+              
+              {/* Language Switcher */}
+              <button
+                onClick={toggleLanguage}
+                className="px-3 py-1.5 bg-navy-100 text-navy-700 rounded-lg font-medium hover:bg-navy-200 transition-colors text-sm dark:bg-navy-800 dark:text-gray-200 dark:hover:bg-navy-700"
+                aria-label="Toggle language"
+              >
+                {language === 'id' ? 'EN' : 'ID'}
+              </button>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-4">
+          <div className="md:hidden flex items-center space-x-3">
+            <ThemeToggle />
+            
             <button
               onClick={toggleLanguage}
-              className="px-3 py-1.5 bg-navy-100 text-navy-700 rounded-lg font-medium hover:bg-navy-200 transition-colors text-sm"
+              className="px-3 py-1.5 bg-navy-100 text-navy-700 rounded-lg font-medium hover:bg-navy-200 transition-colors text-sm dark:bg-navy-800 dark:text-gray-200 dark:hover:bg-navy-700"
               aria-label="Toggle language"
             >
               {language === 'id' ? 'EN' : 'ID'}
             </button>
             <button
-              className="text-navy-900"
+              className="text-navy-900 dark:text-white"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               <svg
@@ -110,7 +120,7 @@ export default function Navbar() {
               <Link
                 key={item.key}
                 href={item.href}
-                className="block text-navy-700 hover:text-navy-900 font-medium"
+                className="block text-navy-700 hover:text-navy-900 font-medium dark:text-gray-300 dark:hover:text-white"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {t.nav[item.key as keyof typeof t.nav]}

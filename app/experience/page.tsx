@@ -14,7 +14,7 @@ export default function ExperiencePage() {
   const experienceItems = getExperience(language)
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-gray-50 dark:bg-navy-950 transition-colors duration-300">
       <Navbar />
       <div className="pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

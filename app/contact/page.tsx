@@ -53,7 +53,7 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-gray-50 dark:bg-navy-950 transition-colors duration-300">
       <Navbar />
       <div className="pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,11 +66,11 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-2xl p-8 md:p-12 shadow-lg"
+            className="bg-white dark:bg-navy-900 rounded-2xl p-8 md:p-12 shadow-lg dark:shadow-navy-800 border border-transparent dark:border-navy-800 transition-colors duration-300"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-navy-900 mb-2">
+                <label htmlFor="name" className="block text-sm font-semibold text-navy-900 dark:text-white mb-2">
                   {t.contact.name}
                 </label>
                 <input
@@ -80,13 +80,13 @@ export default function ContactPage() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-navy-500 focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-3 bg-white dark:bg-navy-800 border border-gray-300 dark:border-navy-700 rounded-xl focus:ring-2 focus:ring-navy-500 dark:focus:ring-navy-400 focus:border-transparent outline-none transition-all text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
                   placeholder={t.contact.namePlaceholder}
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-navy-900 mb-2">
+                <label htmlFor="email" className="block text-sm font-semibold text-navy-900 dark:text-white mb-2">
                   {t.contact.email}
                 </label>
                 <input
@@ -96,13 +96,13 @@ export default function ContactPage() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-navy-500 focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-3 bg-white dark:bg-navy-800 border border-gray-300 dark:border-navy-700 rounded-xl focus:ring-2 focus:ring-navy-500 dark:focus:ring-navy-400 focus:border-transparent outline-none transition-all text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
                   placeholder={t.contact.emailPlaceholder}
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-navy-900 mb-2">
+                <label htmlFor="message" className="block text-sm font-semibold text-navy-900 dark:text-white mb-2">
                   {t.contact.message}
                 </label>
                 <textarea
@@ -112,7 +112,7 @@ export default function ContactPage() {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-navy-500 focus:border-transparent outline-none transition-all resize-none"
+                  className="w-full px-4 py-3 bg-white dark:bg-navy-800 border border-gray-300 dark:border-navy-700 rounded-xl focus:ring-2 focus:ring-navy-500 dark:focus:ring-navy-400 focus:border-transparent outline-none transition-all resize-none text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
                   placeholder={t.contact.messagePlaceholder}
                 />
               </div>
@@ -132,21 +132,21 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full px-8 py-3 bg-navy-900 text-white rounded-xl font-semibold hover:bg-navy-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
+                className="w-full px-8 py-3 bg-navy-900 text-white dark:bg-white dark:text-navy-900 rounded-xl font-semibold hover:bg-navy-800 dark:hover:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
               >
                 {isSubmitting ? t.contact.sending : t.contact.sendMessage}
               </button>
             </form>
 
-            <div className="mt-12 pt-8 border-t border-gray-200">
-              <h3 className="text-xl font-bold text-navy-900 mb-4">{t.contact.otherWays}</h3>
-              <div className="space-y-3 text-gray-700">
+            <div className="mt-12 pt-8 border-t border-gray-200 dark:border-navy-700">
+              <h3 className="text-xl font-bold text-navy-900 dark:text-white mb-4">{t.contact.otherWays}</h3>
+              <div className="space-y-3 text-gray-700 dark:text-gray-300">
                 {/* Kontak info diambil dari .env file */}
                 <p>
                   <span className="font-semibold">{t.common.email}:</span>{' '}
                   <a
                     href={`mailto:${siteConfig.contact.email}`}
-                    className="text-navy-700 hover:text-navy-900 underline"
+                    className="text-navy-700 hover:text-navy-900 dark:text-navy-300 dark:hover:text-white underline"
                   >
                     {siteConfig.contact.email}
                   </a>
@@ -158,7 +158,7 @@ export default function ContactPage() {
                       href={siteConfig.contact.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-navy-700 hover:text-navy-900 underline"
+                      className="text-navy-700 hover:text-navy-900 dark:text-navy-300 dark:hover:text-white underline"
                     >
                       {siteConfig.contact.linkedin.replace('https://', '')}
                     </a>
@@ -171,7 +171,7 @@ export default function ContactPage() {
                       href={siteConfig.contact.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-navy-700 hover:text-navy-900 underline"
+                      className="text-navy-700 hover:text-navy-900 dark:text-navy-300 dark:hover:text-white underline"
                     >
                       {siteConfig.contact.github.replace('https://', '')}
                     </a>
@@ -182,7 +182,7 @@ export default function ContactPage() {
                     <span className="font-semibold">{t.common.phone}:</span>{' '}
                     <a
                       href={`tel:${siteConfig.contact.phone}`}
-                      className="text-navy-700 hover:text-navy-900 underline"
+                      className="text-navy-700 hover:text-navy-900 dark:text-navy-300 dark:hover:text-white underline"
                     >
                       {siteConfig.contact.phone}
                     </a>
@@ -195,7 +195,7 @@ export default function ContactPage() {
                       href={siteConfig.contact.website}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-navy-700 hover:text-navy-900 underline"
+                      className="text-navy-700 hover:text-navy-900 dark:text-navy-300 dark:hover:text-white underline"
                     >
                       {siteConfig.contact.website.replace('https://', '')}
                     </a>

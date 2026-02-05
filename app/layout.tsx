@@ -21,17 +21,26 @@ export const metadata: Metadata = {
   },
 }
 
+import { ThemeProvider } from '@/components/ThemeProvider'
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="id">
-      <body>
-        <LanguageProvider>
-          {children}
-        </LanguageProvider>
+    <html lang="id" suppressHydrationWarning>
+      <body className="bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <LanguageProvider>
+            {children}
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   )

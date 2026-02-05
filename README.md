@@ -1,6 +1,10 @@
 # Portfolio — Muhammad Rasyid Hidayat
 
-Professional portfolio website showcasing expertise in Backend & Database Engineering, built with Next.js 14, TypeScript, TailwindCSS, and PostgreSQL.
+Professional portfolio website showcasing expertise in Full-Stack Engineering with modern tech stack. Features 11 production-ready projects including enterprise systems, full-stack applications, and modern landing pages.
+
+**🌐 Live Portfolio:** [Coming Soon - Deploy to Vercel]
+
+**📋 All Deployed Projects:** See [DEPLOYED_URLS.md](./DEPLOYED_URLS.md) for complete list of live demos
 
 ## 🚀 Tech Stack
 
@@ -189,16 +193,54 @@ The contact form at `/contact` saves messages to PostgreSQL via Prisma. Make sur
 - Run `npm run prisma:migrate` to apply migrations
 - Use `npm run prisma:studio` to inspect database
 
-## 📚 Next Steps
+## 🎯 Featured Projects (All Live!)
 
-This portfolio is designed to be scalable. Future enhancements could include:
+### 🥇 Enterprise-Level Systems
+1. **Order Management System** - OCR & Bot Integration
+   - Live: https://order-management-system-frontend-or.vercel.app/
+   - Tech: Node.js, React, PostgreSQL, Google Vision OCR, Telegram/WhatsApp Bot
+   - Highlights: 80% faster input, 35+ tests, 17+ docs
 
-- Blog section
-- Admin dashboard for managing projects
-- Analytics integration
-- Email notifications for contact form
-- Multi-language support
-- Dark mode toggle
+2. **Financial Reporting System** - 10x Performance Optimization
+   - Live: https://financial-reporting-system.vercel.app/
+   - Tech: Go, Next.js 14, PostgreSQL, Redis, PL/pgSQL
+   - Highlights: 95% cache improvement (450ms → 5ms), 100K+ transactions
+
+3. **POS System** - Modern Point of Sale
+   - Live: https://pos-system-seven-pied.vercel.app/
+   - Tech: Go, sqlc, Next.js 14, Docker, OpenAPI
+   - Highlights: Type-safe queries, RBAC, containerized
+
+### 🥈 Full-Stack Applications
+4. **Kopi Shop Progo** - Dynamic CMS
+   - Live: https://kopi-shop-progo.vercel.app/
+   - Tech: Node.js, React, PostgreSQL, Google Maps
+   
+5. **Dashboard Raport Sekolah** - School Management
+   - Live: https://web-dasboard-raport-v1.vercel.app/
+   - Tech: Node.js, React, PostgreSQL, JWT, ExcelJS
+
+### 🥉 Landing Pages (6 Projects)
+- Professional Landing Page: https://professional-landing-page-neon.vercel.app/
+- Nebula Innovations: https://nebula-innovations.vercel.app/
+- Company Profile (3D): https://company-profile-landing.vercel.app/
+- AI SaaS Landing: https://ai-productivity-saas-landing.vercel.app/
+- Restaurant Page: https://rm-lukito-badran-new-template.vercel.app/
+- Medical Practice: https://praktek-dr-indah-nurhayati-sp-a.vercel.app/
+
+**Total: 11 Production-Ready Projects ✅**
+
+See [DEPLOYED_URLS.md](./DEPLOYED_URLS.md) for complete details including demo credentials.
+
+## 📚 Portfolio Strategy
+
+This portfolio is part of a comprehensive career strategy:
+- Week 1: Deploy all projects ✅ **COMPLETED!**
+- Week 2: GitHub repos, LinkedIn, Upwork profiles
+- Week 3-4: Start freelance applications
+- Month 2-3: Land first remote job or freelance clients
+
+See [ACTION_CHECKLIST.md](../porto2.0/ACTION_CHECKLIST.md) for complete 30-day plan.
 
 ## 📄 License
 

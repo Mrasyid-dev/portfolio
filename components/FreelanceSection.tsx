@@ -19,11 +19,7 @@ export default function FreelanceSection() {
   return (
     <section className="py-20 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        <div
           className="text-center"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -35,16 +31,12 @@ export default function FreelanceSection() {
 
           <div className="flex flex-wrap justify-center gap-3 mb-10">
             {services.map((service, index) => (
-              <motion.span
+              <span
                 key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
                 className="px-5 py-2.5 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 hover:bg-white/20 transition"
               >
                 {service}
-              </motion.span>
+              </span>
             ))}
           </div>
 
@@ -72,7 +64,7 @@ export default function FreelanceSection() {
               🌍 {t.freelance.location}
             </p>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

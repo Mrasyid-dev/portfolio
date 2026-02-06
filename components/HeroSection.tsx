@@ -2,20 +2,25 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { useState } from 'react'
 import { siteConfig } from '@/lib/config'
 import { useLanguage } from '@/contexts/LanguageContext'
-import Scene3D from './Scene3D'
 
 export default function HeroSection() {
-  const [imageError, setImageError] = useState(false)
   const { t } = useLanguage()
-  
+
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-gray-50 to-navy-50 dark:from-navy-950 dark:via-navy-900 dark:to-navy-800 pt-16 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
+    <section className="relative min-h-screen flex items-center overflow-hidden pt-16">
+      {/* Overlay sangat tipis — background 3D tetap terlihat, teks tetap terbaca */}
+      <div
+        className="absolute inset-0 z-[1] pointer-events-none"
+        aria-hidden
+        style={{
+          background:
+            'linear-gradient(to right, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.12) 45%, transparent 65%)',
+        }}
+      />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+        <div className="max-w-2xl text-white">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -26,7 +31,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy-900 dark:text-white leading-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight drop-shadow-sm"
             >
               {siteConfig.name}
             </motion.h1>
@@ -34,7 +39,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-2xl md:text-3xl text-navy-700 dark:text-navy-100 font-semibold"
+              className="text-2xl md:text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-accent-blue-light to-accent-purple-light"
             >
               {t.hero.title}
             </motion.h2>
@@ -42,7 +47,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed"
+              className="text-lg text-slate-300 leading-relaxed"
             >
               {t.hero.description}
             </motion.p>
@@ -55,20 +60,23 @@ export default function HeroSection() {
               className="space-y-2"
             >
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-6">
-                {Object.entries(t.hero.metrics).map(([key, value], index) => {
-                    if (key.includes('Label')) return null;
-                    const labelKey = `${key}Label` as keyof typeof t.hero.metrics;
-                    return (
-                      <div key={key} className="text-center bg-white/50 dark:bg-navy-800/50 backdrop-blur-sm rounded-xl p-4 border border-gray-200 dark:border-navy-700 hover:scale-105 transition-transform duration-300">
-                          <div className="text-3xl font-bold text-navy-900 dark:text-white">{value}</div>
-                          <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">{t.hero.metrics[labelKey]}</div>
-                      </div>
-                    )
+                {Object.entries(t.hero.metrics).map(([key, value]) => {
+                  if (key.includes('Label')) return null
+                  const labelKey = `${key}Label` as keyof typeof t.hero.metrics
+                  return (
+                    <div
+                      key={key}
+                      className="text-center bg-transparent rounded-xl p-4 border border-white/25 hover:scale-105 hover:border-accent-blue-light/60 transition-all duration-300"
+                    >
+                      <div className="text-3xl font-bold text-white">{value}</div>
+                      <div className="text-sm text-slate-400 mt-1">{t.hero.metrics[labelKey]}</div>
+                    </div>
+                  )
                 })}
               </div>
-              <p className="text-xs text-gray-500 dark:text-gray-400">
+              <p className="text-xs text-slate-400">
                 {t.hero.metricsContext}{' '}
-                <Link href="/#enterprise-pos" className="text-navy-700 dark:text-navy-200 font-medium hover:underline">
+                <Link href="/#enterprise-pos" className="text-accent-blue-light font-medium hover:underline">
                   {t.hero.metricsContextLink}
                 </Link>
               </p>
@@ -82,37 +90,22 @@ export default function HeroSection() {
             >
               <Link
                 href="/contact"
-                className="px-8 py-3 bg-navy-900 text-white dark:bg-white dark:text-navy-900 rounded-2xl font-semibold hover:bg-navy-800 dark:hover:bg-gray-100 transition-colors text-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="px-8 py-3 bg-gradient-accent text-white rounded-2xl font-semibold hover:opacity-90 transition-opacity text-center shadow-lg shadow-accent-purple/30 transform hover:-translate-y-1"
               >
                 {t.hero.contactMe}
               </Link>
               <a
                 href={siteConfig.cvFile}
                 download
-                className="px-8 py-3 bg-white text-navy-900 border-2 border-navy-900 dark:bg-transparent dark:text-white dark:border-white rounded-2xl font-semibold hover:bg-navy-50 dark:hover:bg-white/10 transition-colors text-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="px-8 py-3 bg-transparent text-white border-2 border-white/50 rounded-2xl font-semibold hover:bg-white/10 transition-colors text-center transform hover:-translate-y-1"
               >
                 {t.hero.downloadCV}
               </a>
             </motion.div>
           </motion.div>
-
-          {/* Right 3D Scene */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-col items-center gap-2"
-          >
-            <div className="flex justify-center h-[560px] w-full min-h-[480px]">
-              <Scene3D />
-            </div>
-            <p className="text-xs text-gray-500 dark:text-gray-400 text-center max-w-[280px]">
-              {t.hero.scene3dCaption}
-            </p>
-            <p className="text-xs text-gray-400 dark:text-gray-500 text-center max-w-[280px]">
-              {t.hero.scene3dClickHint}
-            </p>
-          </motion.div>
+          <p className="text-xs text-slate-500 mt-6">
+            {t.hero.cursorCubesCaption} — {t.hero.cursorCubesHint}
+          </p>
         </div>
       </div>
     </section>

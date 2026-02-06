@@ -38,8 +38,8 @@ export default function Navbar() {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white shadow-md dark:bg-navy-900 dark:shadow-navy-800'
-          : 'bg-white/80 backdrop-blur-sm dark:bg-navy-900/80'
+          ? 'bg-white shadow-md dark:bg-ink-light dark:shadow-black/20'
+          : 'bg-white/80 backdrop-blur-sm dark:bg-ink/90 dark:backdrop-blur-sm'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -54,7 +54,7 @@ export default function Navbar() {
               <Link
                 key={item.key}
                 href={item.href}
-                className="text-navy-700 hover:text-navy-900 font-medium transition-colors dark:text-gray-300 dark:hover:text-white"
+                className="text-navy-700 hover:text-accent-blue font-medium transition-colors dark:text-slate-300 dark:hover:text-accent-blue-light"
               >
                 {t.nav[item.key as keyof typeof t.nav]}
               </Link>

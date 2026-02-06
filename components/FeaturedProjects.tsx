@@ -47,9 +47,17 @@ const featuredProjects = [
   },
 ]
 
-export default function FeaturedProjects() {
+type FeaturedProjectsProps = { transparent?: boolean }
+
+export default function FeaturedProjects({ transparent }: FeaturedProjectsProps) {
   return (
-    <section className="py-20 bg-gray-50 dark:bg-navy-900 transition-colors duration-300">
+    <section
+      className={
+        transparent
+          ? 'py-20 bg-black/10 dark:bg-black/15 transition-colors duration-300'
+          : 'py-20 bg-gray-50 dark:bg-navy-900 transition-colors duration-300'
+      }
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
           title="Featured Projects"
@@ -64,7 +72,11 @@ export default function FeaturedProjects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative bg-white dark:bg-navy-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+              className={
+                transparent
+                  ? 'group relative bg-white/70 dark:bg-white/5 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-white/20'
+                  : 'group relative bg-white dark:bg-navy-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2'
+              }
             >
               {/* Gradient Header */}
               <div className={`h-2 bg-gradient-to-r ${project.gradient}`} />
@@ -96,7 +108,11 @@ export default function FeaturedProjects() {
                 </div>
 
                 {/* Metrics */}
-                <div className="grid grid-cols-3 gap-2 mb-6 p-4 bg-gray-50 dark:bg-navy-900 rounded-xl">
+                <div className={
+                    transparent
+                      ? 'grid grid-cols-3 gap-2 mb-6 p-4 bg-black/20 dark:bg-black/30 rounded-xl'
+                      : 'grid grid-cols-3 gap-2 mb-6 p-4 bg-gray-50 dark:bg-navy-900 rounded-xl'
+                  }>
                   {project.metrics.map((metric) => (
                     <div key={metric.label} className="text-center">
                       <div className="text-lg font-bold text-navy-900 dark:text-white">

@@ -23,6 +23,25 @@ const config: Config = {
           900: '#102a43',
           950: '#0a1929',
         },
+        // Aksen biru–ungu (referensi landing modern)
+        accent: {
+          blue: '#3b82f6',
+          'blue-light': '#60a5fa',
+          'blue-dark': '#2563eb',
+          purple: '#a855f7',
+          'purple-light': '#c084fc',
+          'purple-dark': '#7c3aed',
+          magenta: '#d946ef',
+        },
+        ink: {
+          DEFAULT: '#0a0a0f',
+          light: '#12121a',
+          muted: '#1a1a24',
+        },
+      },
+      backgroundImage: {
+        'gradient-accent': 'linear-gradient(135deg, #3b82f6 0%, #a855f7 50%, #d946ef 100%)',
+        'gradient-accent-subtle': 'linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(168, 85, 247, 0.15) 100%)',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

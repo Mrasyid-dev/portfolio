@@ -97,12 +97,14 @@ export const translations = {
     // Skills Page
     skills: {
       title: 'Keahlian',
-      subtitle: 'Kompetensi teknis dalam pengembangan backend, manajemen database, dan operasi sistem',
+      subtitle: 'Kompetensi teknis dalam pengembangan backend, manajemen database, frontend modern, dan operasi sistem',
       categories: {
         backend: 'Backend & Programming',
         database: 'Database & Data Processing',
         messaging: 'Messaging, Integration & Infrastructure',
-        frontend: 'Frontend (Supporting)',
+        frontend: 'Frontend Development',
+        toolsDevOps: 'Tools & DevOps',
+        specialized: 'Specialized Skills',
       },
     },
     // Projects Page
@@ -308,12 +310,14 @@ export const translations = {
     // Skills Page
     skills: {
       title: 'Skills',
-      subtitle: 'Technical competencies across backend development, database management, and system operations',
+      subtitle: 'Technical competencies across backend development, database management, modern frontend, and system operations',
       categories: {
         backend: 'Backend & Programming',
         database: 'Database & Data Processing',
         messaging: 'Messaging, Integration & Infrastructure',
-        frontend: 'Frontend (Supporting)',
+        frontend: 'Frontend Development',
+        toolsDevOps: 'Tools & DevOps',
+        specialized: 'Specialized Skills',
       },
     },
     // Projects Page

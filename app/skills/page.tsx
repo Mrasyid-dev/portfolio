@@ -10,18 +10,20 @@ const skillsData = [
   {
     categoryKey: 'backend',
     skills: [
-      'Java (Spring Boot, internal framework jLeaf)',
-      'SQL (transactional query, stored function, optimization)',
-      'Golang (project-based, backend POS Mobile)',
+      'Go (Golang) - Gin, sqlc, pgx',
+      'Node.js - Express, Prisma, JWT',
+      'Java - Spring Boot (professional work)',
+      'RESTful API design',
     ],
     icon: '💻',
   },
   {
     categoryKey: 'database',
     skills: [
-      'PostgreSQL (stored function, JSON processing, performance tuning)',
+      'PostgreSQL - Advanced (stored procedures, optimization)',
       'MySQL',
-      'Data migration & data correction (mass import, data consistency)',
+      'Redis (caching)',
+      'SQL optimization, data migration',
     ],
     icon: '🗄️',
   },
@@ -30,21 +32,52 @@ const skillsData = [
     skills: [
       'ActiveMQ (transaction reprocess, async handling)',
       'RabbitMQ',
-      'Redis',
-      'Cross-system integration (including database-level integration)',
+      'Bot APIs (Telegram, WhatsApp)',
+      'Cloud APIs (Google Vision)',
+      'Cross-system integration',
     ],
     icon: '⚙️',
   },
   {
     categoryKey: 'frontend',
-    skills: ['JSF', 'PrimeFaces', 'HTML & basic CSS'],
+    skills: [
+      'React - Hooks, Context, Router',
+      'Next.js 14 - App Router, TypeScript',
+      'TypeScript - Type-safe development',
+      'TailwindCSS - Modern styling',
+      'HTML5, CSS3, JavaScript',
+      'JSF, PrimeFaces (enterprise UI)',
+    ],
     icon: '🎨',
+  },
+  {
+    categoryKey: 'toolsDevOps',
+    skills: [
+      'Docker & Docker Compose',
+      'Git & GitHub',
+      'Postman (API testing)',
+      'Database migrations',
+      'CI/CD basics',
+    ],
+    icon: '🛠️',
+  },
+  {
+    categoryKey: 'specialized',
+    skills: [
+      'SQL Optimization (proven track record)',
+      'Performance Tuning',
+      'Database Design',
+      'Message Queues (ActiveMQ, RabbitMQ)',
+      'Bot Development',
+      'OCR Integration',
+    ],
+    icon: '⚡',
   },
 ]
 
 export default function SkillsPage() {
   const { t } = useLanguage()
-  
+
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-navy-950 transition-colors duration-300">
       <Navbar />
@@ -55,7 +88,7 @@ export default function SkillsPage() {
             subtitle={t.skills.subtitle}
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skillsData.map((skill, index) => (
               <SkillCard
                 key={index}

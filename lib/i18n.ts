@@ -30,6 +30,8 @@ export const translations = {
         errorRate: '<0.1%',
         errorRateLabel: 'Error Rate',
       },
+      scene3dCaption: 'Jaringan layanan & database — interaktif 3D (React Three Fiber)',
+      scene3dClickHint: 'Klik bola untuk menuju menu',
     },
     // Freelance Section
     freelance: {
@@ -228,6 +230,8 @@ export const translations = {
         errorRate: '<0.1%',
         errorRateLabel: 'Error Rate',
       },
+      scene3dCaption: 'Services & database network — interactive 3D (React Three Fiber)',
+      scene3dClickHint: 'Click nodes to navigate',
     },
     // Freelance Section
     freelance: {

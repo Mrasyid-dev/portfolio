@@ -93,9 +93,17 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex justify-center h-[500px]"
+            className="flex flex-col items-center gap-2"
           >
-            <Scene3D />
+            <div className="flex justify-center h-[560px] w-full min-h-[480px]">
+              <Scene3D />
+            </div>
+            <p className="text-xs text-gray-500 dark:text-gray-400 text-center max-w-[280px]">
+              {t.hero.scene3dCaption}
+            </p>
+            <p className="text-xs text-gray-400 dark:text-gray-500 text-center max-w-[280px]">
+              {t.hero.scene3dClickHint}
+            </p>
           </motion.div>
         </div>
       </div>

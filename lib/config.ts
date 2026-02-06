@@ -16,6 +16,14 @@ export const siteConfig = {
     github: process.env.NEXT_PUBLIC_CONTACT_GITHUB || 'https://github.com/Mrasyid-dev',
     phone: process.env.NEXT_PUBLIC_CONTACT_PHONE || '', // Optional
     website: process.env.NEXT_PUBLIC_CONTACT_WEBSITE || '', // Optional
+    // WhatsApp: pakai nomor ini, atau isi NEXT_PUBLIC_CONTACT_WHATSAPP (format 628xxx tanpa +/spasi)
+    get whatsappUrl(): string {
+      const raw = (process.env.NEXT_PUBLIC_CONTACT_WHATSAPP ?? this.phone) || ''
+      const digits = raw.replace(/\D/g, '')
+      if (!digits) return ''
+      const num = digits.startsWith('0') ? '62' + digits.slice(1) : digits.startsWith('62') ? digits : '62' + digits
+      return `https://wa.me/${num}`
+    },
   },
 
   // Profile Image

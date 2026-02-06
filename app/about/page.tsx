@@ -3,6 +3,7 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import SectionTitle from '@/components/SectionTitle'
+import Link from 'next/link'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function AboutPage() {
@@ -99,6 +100,28 @@ export default function AboutPage() {
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                 {t.about.commitmentText}
               </p>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-bold text-navy-900 dark:text-white mb-4">{t.about.lookingFor}</h3>
+              <ul className="space-y-2 text-gray-700 dark:text-gray-300 leading-relaxed list-disc list-inside">
+                {(t.about.lookingForItems as string[]).map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="pt-4 border-t border-gray-200 dark:border-navy-700">
+              <p className="text-gray-700 dark:text-gray-300 mb-6 flex items-center gap-2">
+                <span className="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500" aria-hidden />
+                {t.about.availabilityStatus}
+              </p>
+              <Link
+                href="/contact"
+                className="inline-flex items-center px-6 py-3 bg-navy-900 text-white dark:bg-white dark:text-navy-900 rounded-xl font-semibold hover:bg-navy-800 dark:hover:bg-gray-100 transition-colors"
+              >
+                {t.about.ctaWorkTogether}
+              </Link>
             </div>
           </div>
         </div>

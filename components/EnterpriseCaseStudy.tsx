@@ -8,7 +8,7 @@ export default function EnterpriseCaseStudy() {
   const { t } = useLanguage()
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-navy-950 transition-colors duration-300">
+    <section id="enterprise-pos" className="py-20 bg-gray-50 dark:bg-navy-950 transition-colors duration-300 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle title={t.enterprisePOS.title} />
 

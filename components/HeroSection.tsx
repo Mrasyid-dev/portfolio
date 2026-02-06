@@ -52,18 +52,26 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.45 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-4 py-6"
+              className="space-y-2"
             >
-              {Object.entries(t.hero.metrics).map(([key, value], index) => {
-                  if (key.includes('Label')) return null;
-                  const labelKey = `${key}Label` as keyof typeof t.hero.metrics;
-                  return (
-                    <div key={key} className="text-center bg-white/50 dark:bg-navy-800/50 backdrop-blur-sm rounded-xl p-4 border border-gray-200 dark:border-navy-700 hover:scale-105 transition-transform duration-300">
-                        <div className="text-3xl font-bold text-navy-900 dark:text-white">{value}</div>
-                        <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">{t.hero.metrics[labelKey]}</div>
-                    </div>
-                  )
-              })}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-6">
+                {Object.entries(t.hero.metrics).map(([key, value], index) => {
+                    if (key.includes('Label')) return null;
+                    const labelKey = `${key}Label` as keyof typeof t.hero.metrics;
+                    return (
+                      <div key={key} className="text-center bg-white/50 dark:bg-navy-800/50 backdrop-blur-sm rounded-xl p-4 border border-gray-200 dark:border-navy-700 hover:scale-105 transition-transform duration-300">
+                          <div className="text-3xl font-bold text-navy-900 dark:text-white">{value}</div>
+                          <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">{t.hero.metrics[labelKey]}</div>
+                      </div>
+                    )
+                })}
+              </div>
+              <p className="text-xs text-gray-500 dark:text-gray-400">
+                {t.hero.metricsContext}{' '}
+                <Link href="/#enterprise-pos" className="text-navy-700 dark:text-navy-200 font-medium hover:underline">
+                  {t.hero.metricsContextLink}
+                </Link>
+              </p>
             </motion.div>
 
             <motion.div
@@ -93,9 +101,17 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex justify-center h-[500px]"
+            className="flex flex-col items-center gap-2"
           >
-            <Scene3D />
+            <div className="flex justify-center h-[560px] w-full min-h-[480px]">
+              <Scene3D />
+            </div>
+            <p className="text-xs text-gray-500 dark:text-gray-400 text-center max-w-[280px]">
+              {t.hero.scene3dCaption}
+            </p>
+            <p className="text-xs text-gray-400 dark:text-gray-500 text-center max-w-[280px]">
+              {t.hero.scene3dClickHint}
+            </p>
           </motion.div>
         </div>
       </div>

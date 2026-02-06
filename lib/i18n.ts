@@ -30,6 +30,10 @@ export const translations = {
         errorRate: '<0.1%',
         errorRateLabel: 'Error Rate',
       },
+      metricsContext: 'Dari pengalaman di sistem POS enterprise.',
+      metricsContextLink: 'Lihat studi kasus →',
+      scene3dCaption: 'Jaringan layanan & database — interaktif 3D (React Three Fiber)',
+      scene3dClickHint: 'Klik bola untuk menuju menu',
     },
     // Freelance Section
     freelance: {
@@ -81,16 +85,26 @@ export const translations = {
       commitment: 'Komitmen & Nilai',
       commitmentText:
         'Saya percaya bahwa kode yang baik adalah kode yang mudah dibaca, mudah dirawat, dan mudah diuji. Saya selalu berkomitmen untuk menulis clean code, mengikuti best practices, dan terus belajar teknologi baru. Saya juga menghargai kolaborasi dalam tim, code review yang konstruktif, dan komunikasi yang efektif untuk mencapai tujuan bersama.',
+      lookingFor: 'Yang Saya Cari',
+      lookingForItems: [
+        'Tim atau klien yang membutuhkan engineer yang dapat mengelola fitur atau proyek secara mandiri',
+        'Kolaborasi dengan tim yang menghargai kode berkualitas dan maintainable',
+        'Kesempatan remote full-time atau freelance project',
+      ],
+      availabilityStatus: 'Terbuka untuk posisi remote full-time dan proyek freelance.',
+      ctaWorkTogether: 'Mari Bekerja Sama →',
     },
     // Skills Page
     skills: {
       title: 'Keahlian',
-      subtitle: 'Kompetensi teknis dalam pengembangan backend, manajemen database, dan operasi sistem',
+      subtitle: 'Kompetensi teknis dalam pengembangan backend, manajemen database, frontend modern, dan operasi sistem',
       categories: {
         backend: 'Backend & Programming',
         database: 'Database & Data Processing',
         messaging: 'Messaging, Integration & Infrastructure',
-        frontend: 'Frontend (Supporting)',
+        frontend: 'Frontend Development',
+        toolsDevOps: 'Tools & DevOps',
+        specialized: 'Specialized Skills',
       },
     },
     // Projects Page
@@ -199,6 +213,7 @@ export const translations = {
       github: 'GitHub',
       phone: 'Telepon',
       website: 'Website',
+      whatsapp: 'WhatsApp',
     },
   },
   en: {
@@ -228,6 +243,10 @@ export const translations = {
         errorRate: '<0.1%',
         errorRateLabel: 'Error Rate',
       },
+      metricsContext: 'From enterprise POS system experience.',
+      metricsContextLink: 'View case study →',
+      scene3dCaption: 'Services & database network — interactive 3D (React Three Fiber)',
+      scene3dClickHint: 'Click nodes to navigate',
     },
     // Freelance Section
     freelance: {
@@ -279,16 +298,26 @@ export const translations = {
       commitment: 'Commitment & Values',
       commitmentText:
         'I believe that good code is code that is easy to read, easy to maintain, and easy to test. I am always committed to writing clean code, following best practices, and continuously learning new technologies. I also value team collaboration, constructive code reviews, and effective communication to achieve common goals.',
+      lookingFor: "What I'm Looking For",
+      lookingForItems: [
+        'Teams or clients who need a reliable engineer who can own complete features or projects',
+        'Collaboration with teams that value quality, maintainable code',
+        'Remote full-time positions or freelance project opportunities',
+      ],
+      availabilityStatus: 'Currently available for remote full-time and freelance projects.',
+      ctaWorkTogether: "Let's Work Together →",
     },
     // Skills Page
     skills: {
       title: 'Skills',
-      subtitle: 'Technical competencies across backend development, database management, and system operations',
+      subtitle: 'Technical competencies across backend development, database management, modern frontend, and system operations',
       categories: {
         backend: 'Backend & Programming',
         database: 'Database & Data Processing',
         messaging: 'Messaging, Integration & Infrastructure',
-        frontend: 'Frontend (Supporting)',
+        frontend: 'Frontend Development',
+        toolsDevOps: 'Tools & DevOps',
+        specialized: 'Specialized Skills',
       },
     },
     // Projects Page
@@ -397,6 +426,7 @@ export const translations = {
       github: 'GitHub',
       phone: 'Phone',
       website: 'Website',
+      whatsapp: 'WhatsApp',
     },
   },
 }

@@ -13,13 +13,20 @@ interface TimelineItemProps {
   skills: string[]
 }
 
-export default function Timeline({ items }: { items: TimelineItemProps[] }) {
+type TimelineProps = { items: TimelineItemProps[]; transparent?: boolean }
+
+export default function Timeline({ items, transparent }: TimelineProps) {
   const { t } = useLanguage()
+  const lineClass = transparent ? 'absolute left-8 top-0 bottom-0 w-0.5 bg-white/30 dark:bg-white/20' : 'absolute left-8 top-0 bottom-0 w-0.5 bg-navy-200 dark:bg-navy-700'
+  const dotClass = transparent ? 'absolute left-6 top-2 w-4 h-4 bg-navy-500 dark:bg-navy-400 rounded-full border-4 border-white/50 dark:border-white/20 shadow-lg' : 'absolute left-6 top-2 w-4 h-4 bg-navy-600 dark:bg-navy-400 rounded-full border-4 border-white dark:border-navy-900 shadow-lg'
+  const contentClass = transparent
+    ? 'bg-white/70 dark:bg-white/5 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border border-white/20 dark:border-white/10 hover:-translate-y-1'
+    : 'bg-white dark:bg-navy-900 rounded-2xl p-6 shadow-lg hover:shadow-xl dark:shadow-navy-800 transition-all border border-gray-100 dark:border-navy-800 hover:-translate-y-1'
   
   return (
     <div className="relative">
       {/* Timeline Line */}
-      <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-navy-200 dark:bg-navy-700"></div>
+      <div className={lineClass}></div>
 
       <div className="space-y-12">
         {items.map((item, index) => (
@@ -32,10 +39,10 @@ export default function Timeline({ items }: { items: TimelineItemProps[] }) {
             className="relative pl-20"
           >
             {/* Timeline Dot */}
-            <div className="absolute left-6 top-2 w-4 h-4 bg-navy-600 dark:bg-navy-400 rounded-full border-4 border-white dark:border-navy-900 shadow-lg"></div>
+            <div className={dotClass}></div>
 
             {/* Content */}
-            <div className="bg-white dark:bg-navy-900 rounded-2xl p-6 shadow-lg hover:shadow-xl dark:shadow-navy-800 transition-all border border-gray-100 dark:border-navy-800 hover:-translate-y-1">
+            <div className={contentClass}>
               <div className="mb-4">
                 <h3 className="text-2xl font-bold text-navy-900 dark:text-white">{item.title}</h3>
                 <p className="text-lg text-navy-700 dark:text-navy-200 font-semibold">{item.company}</p>
@@ -74,7 +81,7 @@ export default function Timeline({ items }: { items: TimelineItemProps[] }) {
                   {item.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1 bg-navy-100 dark:bg-navy-700 text-navy-700 dark:text-gray-200 rounded-full text-sm font-medium"
+                      className={transparent ? 'px-3 py-1 bg-white/40 dark:bg-white/10 text-navy-700 dark:text-gray-200 rounded-full text-sm font-medium border border-white/20' : 'px-3 py-1 bg-navy-100 dark:bg-navy-700 text-navy-700 dark:text-gray-200 rounded-full text-sm font-medium'}
                     >
                       {skill}
                     </span>

@@ -4,7 +4,9 @@ import { motion } from 'framer-motion'
 import { useLanguage } from '@/contexts/LanguageContext'
 import Link from 'next/link'
 
-export default function FreelanceSection() {
+type FreelanceSectionProps = { transparent?: boolean }
+
+export default function FreelanceSection({ transparent }: FreelanceSectionProps) {
   const { t } = useLanguage()
 
   const services = [
@@ -17,7 +19,13 @@ export default function FreelanceSection() {
   ]
 
   return (
-    <section className="py-20 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 text-white">
+    <section
+      className={
+        transparent
+          ? 'py-20 bg-black/15 dark:bg-black/25 text-white'
+          : 'py-20 bg-gradient-to-br from-ink via-ink-light to-ink-muted text-white'
+      }
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           className="text-center"
@@ -25,7 +33,7 @@ export default function FreelanceSection() {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             {t.freelance.title}
           </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto">
             {t.freelance.subtitle}
           </p>
 
@@ -43,7 +51,7 @@ export default function FreelanceSection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="inline-block px-8 py-4 bg-white text-navy-900 rounded-lg font-semibold hover:bg-gray-100 transition transform hover:scale-105"
+              className="inline-block px-8 py-4 bg-gradient-accent text-white rounded-lg font-semibold hover:opacity-90 transition transform hover:scale-105 shadow-lg shadow-accent-purple/20"
             >
               {t.freelance.getInTouch}
             </Link>

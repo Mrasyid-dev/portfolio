@@ -11,6 +11,7 @@ interface ProjectCardProps {
   impact: string
   githubLink?: string
   demoLink?: string
+  transparent?: boolean
 }
 
 export default function ProjectCard({
@@ -21,8 +22,15 @@ export default function ProjectCard({
   impact,
   githubLink,
   demoLink,
+  transparent,
 }: ProjectCardProps) {
   const { t } = useLanguage()
+  const cardClass = transparent
+    ? 'bg-white/70 dark:bg-white/5 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border border-white/20 dark:border-white/10 hover:-translate-y-1'
+    : 'bg-white dark:bg-navy-900 rounded-2xl p-6 shadow-lg hover:shadow-xl dark:shadow-navy-800 transition-all border border-gray-100 dark:border-navy-700 hover:-translate-y-1'
+  const badgeClass = transparent
+    ? 'inline-block px-3 py-1 bg-white/40 dark:bg-white/10 text-gray-700 dark:text-gray-200 rounded-full text-xs font-medium border border-white/20'
+    : 'inline-block px-3 py-1 bg-gray-100 dark:bg-navy-800 text-gray-600 dark:text-gray-300 rounded-full text-xs font-medium'
   
   return (
     <motion.div
@@ -30,10 +38,10 @@ export default function ProjectCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5 }}
-      className="bg-white dark:bg-navy-900 rounded-2xl p-6 shadow-lg hover:shadow-xl dark:shadow-navy-800 transition-all border border-gray-100 dark:border-navy-700 hover:-translate-y-1"
+      className={cardClass}
     >
       <div className="mb-3">
-        <span className="inline-block px-3 py-1 bg-gray-100 dark:bg-navy-800 text-gray-600 dark:text-gray-300 rounded-full text-xs font-medium">
+        <span className={badgeClass}>
           {t.projects.personalProjectBadge}
         </span>
       </div>
@@ -43,7 +51,7 @@ export default function ProjectCard({
         {tools.map((tool) => (
           <span
             key={tool}
-            className="px-3 py-1 bg-navy-100 dark:bg-navy-700 text-navy-700 dark:text-gray-200 rounded-full text-sm font-medium"
+            className={transparent ? 'px-3 py-1 bg-white/40 dark:bg-white/10 text-navy-700 dark:text-gray-200 rounded-full text-sm font-medium border border-white/20' : 'px-3 py-1 bg-navy-100 dark:bg-navy-700 text-navy-700 dark:text-gray-200 rounded-full text-sm font-medium'}
           >
             {tool}
           </span>

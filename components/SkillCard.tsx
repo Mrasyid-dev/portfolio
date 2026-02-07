@@ -6,16 +6,20 @@ interface SkillCardProps {
   category: string
   skills: string[]
   icon?: string
+  transparent?: boolean
 }
 
-export default function SkillCard({ category, skills, icon }: SkillCardProps) {
+export default function SkillCard({ category, skills, icon, transparent }: SkillCardProps) {
+  const cardClass = transparent
+    ? 'bg-white/70 dark:bg-white/5 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border border-white/20 dark:border-white/10 hover:-translate-y-1'
+    : 'bg-white dark:bg-navy-900 rounded-2xl p-6 shadow-lg hover:shadow-xl dark:shadow-navy-800 transition-all border border-gray-100 dark:border-navy-800 hover:-translate-y-1'
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5 }}
-      className="bg-white dark:bg-navy-900 rounded-2xl p-6 shadow-lg hover:shadow-xl dark:shadow-navy-800 transition-all border border-gray-100 dark:border-navy-800 hover:-translate-y-1"
+      className={cardClass}
     >
       <div className="flex items-center gap-3 mb-4">
         {icon && <span className="text-3xl">{icon}</span>}

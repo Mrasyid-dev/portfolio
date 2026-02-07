@@ -10,19 +10,20 @@ export default function AboutPage() {
   const { t } = useLanguage()
   
   return (
-    <main className="min-h-screen bg-gray-50 dark:bg-navy-950 transition-colors duration-300">
+    <main className="min-h-screen bg-white dark:bg-transparent transition-colors duration-300">
       <Navbar />
-      <div className="pt-24 pb-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionTitle
-            title={t.about.title}
-            subtitle={t.about.subtitle}
-          />
+      <section className="py-20 bg-black/5 dark:bg-black/15 transition-colors duration-300 min-h-screen">
+        <div className="pt-24 pb-16">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionTitle
+              title={t.about.title}
+              subtitle={t.about.subtitle}
+            />
 
-          <div className="bg-white dark:bg-navy-900 rounded-2xl p-8 md:p-12 shadow-lg dark:shadow-navy-800 border border-transparent dark:border-navy-800 space-y-8 transition-colors duration-300">
-            <div>
-              <h3 className="text-2xl font-bold text-navy-900 dark:text-white mb-4">{t.about.education}</h3>
-              <div className="bg-navy-50 dark:bg-navy-800 rounded-xl p-6 transition-colors duration-300">
+            <div className="bg-white/70 dark:bg-white/5 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-lg border border-white/20 dark:border-white/10 space-y-8 transition-colors duration-300">
+              <div>
+                <h3 className="text-2xl font-bold text-navy-900 dark:text-white mb-4">{t.about.education}</h3>
+                <div className="bg-white/40 dark:bg-white/5 rounded-xl p-6 border border-white/20 dark:border-white/10 transition-colors duration-300">
                 <h4 className="text-xl font-semibold text-navy-900 dark:text-white mb-2">
                   Universitas Sebelas Maret (UNS)
                 </h4>
@@ -111,7 +112,7 @@ export default function AboutPage() {
               </ul>
             </div>
 
-            <div className="pt-4 border-t border-gray-200 dark:border-navy-700">
+            <div className="pt-4 border-t border-white/20 dark:border-white/10">
               <p className="text-gray-700 dark:text-gray-300 mb-6 flex items-center gap-2">
                 <span className="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500" aria-hidden />
                 {t.about.availabilityStatus}
@@ -124,9 +125,10 @@ export default function AboutPage() {
               </Link>
             </div>
           </div>
+          </div>
         </div>
-      </div>
-      <Footer />
+      </section>
+      <Footer transparent />
     </main>
   )
 }

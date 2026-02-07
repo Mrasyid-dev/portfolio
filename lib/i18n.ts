@@ -34,6 +34,8 @@ export const translations = {
       metricsContextLink: 'Lihat studi kasus →',
       scene3dCaption: 'Jaringan layanan & database — interaktif 3D (React Three Fiber)',
       scene3dClickHint: 'Klik bola untuk menuju menu',
+      cursorCubesCaption: 'Background 3D — React Three Fiber',
+      cursorCubesHint: 'Geser kursor untuk melihat efek',
     },
     // Freelance Section
     freelance: {
@@ -247,6 +249,8 @@ export const translations = {
       metricsContextLink: 'View case study →',
       scene3dCaption: 'Services & database network — interactive 3D (React Three Fiber)',
       scene3dClickHint: 'Click nodes to navigate',
+      cursorCubesCaption: '3D background — React Three Fiber',
+      cursorCubesHint: 'Move cursor to see the effect',
     },
     // Freelance Section
     freelance: {

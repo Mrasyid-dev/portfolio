@@ -79,28 +79,31 @@ export default function SkillsPage() {
   const { t } = useLanguage()
 
   return (
-    <main className="min-h-screen bg-gray-50 dark:bg-navy-950 transition-colors duration-300">
+    <main className="min-h-screen bg-white dark:bg-transparent transition-colors duration-300">
       <Navbar />
-      <div className="pt-24 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionTitle
-            title={t.skills.title}
-            subtitle={t.skills.subtitle}
-          />
+      <section className="py-20 bg-black/5 dark:bg-black/15 transition-colors duration-300 min-h-screen">
+        <div className="pt-24 pb-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionTitle
+              title={t.skills.title}
+              subtitle={t.skills.subtitle}
+            />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {skillsData.map((skill, index) => (
-              <SkillCard
-                key={index}
-                category={t.skills.categories[skill.categoryKey as keyof typeof t.skills.categories]}
-                skills={skill.skills}
-                icon={skill.icon}
-              />
-            ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {skillsData.map((skill, index) => (
+                <SkillCard
+                  key={index}
+                  category={t.skills.categories[skill.categoryKey as keyof typeof t.skills.categories]}
+                  skills={skill.skills}
+                  icon={skill.icon}
+                  transparent
+                />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-      <Footer />
+      </section>
+      <Footer transparent />
     </main>
   )
 }

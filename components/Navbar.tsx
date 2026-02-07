@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/contexts/LanguageContext'
-import { ThemeToggle } from '@/components/ThemeToggle'
 
 const navItems = [
   { key: 'home', href: '/' },
@@ -38,13 +37,13 @@ export default function Navbar() {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white shadow-md dark:bg-navy-900 dark:shadow-navy-800'
-          : 'bg-white/80 backdrop-blur-sm dark:bg-navy-900/80'
+          ? 'bg-black/40 backdrop-blur-md shadow-black/30 border-b border-white/10'
+          : 'bg-black/20 backdrop-blur-md border-b border-white/5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="text-xl font-bold text-navy-900 dark:text-white">
+          <Link href="/" className="text-xl font-bold text-white">
             MRH
           </Link>
 
@@ -54,19 +53,17 @@ export default function Navbar() {
               <Link
                 key={item.key}
                 href={item.href}
-                className="text-navy-700 hover:text-navy-900 font-medium transition-colors dark:text-gray-300 dark:hover:text-white"
+                className="text-slate-300 hover:text-accent-blue-light font-medium transition-colors"
               >
                 {t.nav[item.key as keyof typeof t.nav]}
               </Link>
             ))}
             
-            <div className="flex items-center space-x-2 pl-4 border-l border-gray-200 dark:border-navy-700">
-              <ThemeToggle />
-              
+            <div className="flex items-center space-x-2 pl-4 border-l border-navy-700">
               {/* Language Switcher */}
               <button
                 onClick={toggleLanguage}
-                className="px-3 py-1.5 bg-navy-100 text-navy-700 rounded-lg font-medium hover:bg-navy-200 transition-colors text-sm dark:bg-navy-800 dark:text-gray-200 dark:hover:bg-navy-700"
+                className="px-3 py-1.5 bg-navy-800 text-gray-200 rounded-lg font-medium hover:bg-navy-700 transition-colors text-sm"
                 aria-label="Toggle language"
               >
                 {language === 'id' ? 'EN' : 'ID'}
@@ -76,17 +73,15 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-3">
-            <ThemeToggle />
-            
             <button
               onClick={toggleLanguage}
-              className="px-3 py-1.5 bg-navy-100 text-navy-700 rounded-lg font-medium hover:bg-navy-200 transition-colors text-sm dark:bg-navy-800 dark:text-gray-200 dark:hover:bg-navy-700"
+              className="px-3 py-1.5 bg-navy-800 text-gray-200 rounded-lg font-medium hover:bg-navy-700 transition-colors text-sm"
               aria-label="Toggle language"
             >
               {language === 'id' ? 'EN' : 'ID'}
             </button>
             <button
-              className="text-navy-900 dark:text-white"
+              className="text-white"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               <svg
@@ -120,7 +115,7 @@ export default function Navbar() {
               <Link
                 key={item.key}
                 href={item.href}
-                className="block text-navy-700 hover:text-navy-900 font-medium dark:text-gray-300 dark:hover:text-white"
+                className="block text-gray-300 hover:text-white font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {t.nav[item.key as keyof typeof t.nav]}

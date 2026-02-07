@@ -24,7 +24,7 @@ export default function EnterpriseCaseStudy({ transparent }: EnterpriseCaseStudy
         <div
           className={
             transparent
-              ? 'bg-white/70 dark:bg-white/5 rounded-2xl p-8 md:p-10 shadow-lg border border-white/20 max-w-4xl mx-auto transition-colors duration-300'
+              ? 'bg-white/70 dark:bg-white/5 backdrop-blur-sm rounded-2xl p-8 md:p-10 shadow-lg border border-white/20 dark:border-white/10 max-w-4xl mx-auto transition-colors duration-300'
               : 'bg-white dark:bg-ink-light/80 rounded-2xl p-8 md:p-10 shadow-lg border border-slate-100 dark:border-white/10 max-w-4xl mx-auto transition-colors duration-300'
           }
         >

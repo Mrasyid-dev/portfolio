@@ -14,19 +14,20 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-white dark:bg-transparent transition-colors duration-300">
       <Navbar />
-      <div className="pt-24 pb-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionTitle
-            title={t.contact.title}
-            subtitle={t.contact.subtitle}
-          />
+      <section className="py-20 bg-black/5 dark:bg-black/15 transition-colors duration-300 min-h-screen">
+        <div className="pt-24 pb-16">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionTitle
+              title={t.contact.title}
+              subtitle={t.contact.subtitle}
+            />
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="bg-white dark:bg-navy-900 rounded-2xl p-8 md:p-12 shadow-lg dark:shadow-navy-800 border border-transparent dark:border-navy-800 transition-colors duration-300"
-          >
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="bg-white/70 dark:bg-white/5 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-lg border border-white/20 dark:border-white/10 transition-colors duration-300"
+            >
             <div className="space-y-6">
               {whatsappUrl && (
                 <div>
@@ -98,9 +99,10 @@ export default function ContactPage() {
               )}
             </div>
           </motion.div>
+          </div>
         </div>
-      </div>
-      <Footer />
+      </section>
+      <Footer transparent />
     </main>
   )
 }

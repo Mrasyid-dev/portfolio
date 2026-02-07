@@ -10,13 +10,13 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-16">
-      {/* Overlay sangat tipis — background 3D tetap terlihat, teks tetap terbaca */}
+      {/* Overlay tipis — background 3D tetap terlihat, teks terbaca */}
       <div
         className="absolute inset-0 z-[1] pointer-events-none"
         aria-hidden
         style={{
           background:
-            'linear-gradient(to right, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.12) 45%, transparent 65%)',
+            'linear-gradient(to right, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0.08) 45%, transparent 60%)',
         }}
       />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">

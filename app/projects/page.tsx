@@ -305,16 +305,17 @@ export default function ProjectsPage() {
   return (
     <main className="min-h-screen bg-white dark:bg-transparent transition-colors duration-300">
       <Navbar />
-      <div className="pt-24 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionTitle
-            title={t.projects.title}
-            subtitle={t.projects.subtitle}
-          />
+      <section className="py-20 bg-black/5 dark:bg-black/15 transition-colors duration-300 min-h-screen">
+        <div className="pt-24 pb-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionTitle
+              title={t.projects.title}
+              subtitle={t.projects.subtitle}
+            />
 
-          {/* TIER 1: Hero Projects */}
-          <div className="mb-16">
-            <div className="flex items-center gap-3 mb-6">
+            {/* TIER 1: Hero Projects */}
+            <div className="mb-16">
+              <div className="flex items-center gap-3 mb-6">
               <div className="h-8 w-1 bg-gradient-to-b from-blue-600 to-cyan-600 rounded-full" />
               <h2 className="text-3xl font-bold text-navy-900 dark:text-white">
                 Enterprise-Level Systems
@@ -334,6 +335,7 @@ export default function ProjectsPage() {
                   impact={typeof project.impact === 'string' ? project.impact : project.impact[language]}
                   githubLink={project.githubLink}
                   demoLink={project.demoLink}
+                  transparent
                 />
               ))}
             </div>
@@ -361,6 +363,7 @@ export default function ProjectsPage() {
                   impact={typeof project.impact === 'string' ? project.impact : project.impact[language]}
                   githubLink={project.githubLink}
                   demoLink={project.demoLink}
+                  transparent
                 />
               ))}
             </div>
@@ -388,13 +391,14 @@ export default function ProjectsPage() {
                   impact={typeof project.impact === 'string' ? project.impact : project.impact[language]}
                   githubLink={project.githubLink}
                   demoLink={project.demoLink}
+                  transparent
                 />
               ))}
             </div>
           </div>
 
           {/* Summary Stats */}
-          <div className="mt-16 bg-white dark:bg-navy-900 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-navy-700">
+          <div className="mt-16 bg-white/70 dark:bg-white/5 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20 dark:border-white/10">
             <h3 className="text-2xl font-bold text-navy-900 dark:text-white mb-6 text-center">
               Portfolio Summary
             </h3>
@@ -433,9 +437,10 @@ export default function ProjectsPage() {
               </div>
             </div>
           </div>
+          </div>
         </div>
-      </div>
-      <Footer />
+      </section>
+      <Footer transparent />
     </main>
   )
 }

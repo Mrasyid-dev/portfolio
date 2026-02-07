@@ -74,7 +74,7 @@ export default function FeaturedProjects({ transparent }: FeaturedProjectsProps)
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={
                 transparent
-                  ? 'group relative bg-white/70 dark:bg-white/5 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-white/20'
+                  ? 'group relative bg-white/70 dark:bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-white/20 dark:border-white/10'
                   : 'group relative bg-white dark:bg-navy-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2'
               }
             >

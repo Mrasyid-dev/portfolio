@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 }
 
 import { ThemeProvider } from '@/components/ThemeProvider'
+import GlobalBackgroundWrapper from '@/components/GlobalBackgroundWrapper'
 
 export default function RootLayout({
   children,
@@ -38,7 +39,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <LanguageProvider>
-            {children}
+            <GlobalBackgroundWrapper>
+              {children}
+            </GlobalBackgroundWrapper>
           </LanguageProvider>
         </ThemeProvider>
       </body>

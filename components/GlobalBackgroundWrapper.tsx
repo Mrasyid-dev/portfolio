@@ -9,7 +9,7 @@ export default function GlobalBackgroundWrapper({
 }: {
   children: React.ReactNode
 }) {
-  const mouseRef = useRef({ x: 0, y: 0 })
+  const mouseRef = useRef({ x: 9999, y: 9999 })
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -24,8 +24,8 @@ export default function GlobalBackgroundWrapper({
   }
 
   const onPointerLeave = () => {
-    mouseRef.current.x = 0
-    mouseRef.current.y = 0
+    mouseRef.current.x = 9999
+    mouseRef.current.y = 9999
   }
 
   const fixedBackground =

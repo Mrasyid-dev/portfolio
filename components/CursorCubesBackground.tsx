@@ -5,9 +5,9 @@ import { Edges } from '@react-three/drei'
 import { useRef, useMemo } from 'react'
 import * as THREE from 'three'
 
-const GRID_SIZE = 20
-const SPACING = 1.1
-const MOUSE_INFLUENCE = 5
+const GRID_SIZE = 30
+const SPACING = 1.05
+const MOUSE_INFLUENCE = 15
 const BLUE = new THREE.Color('#60a5fa')
 const PURPLE = new THREE.Color('#c084fc')
 
@@ -24,6 +24,7 @@ function Cube({
 }) {
   const meshRef = useRef<THREE.Mesh>(null!)
   const groupRef = useRef<THREE.Group>(null!)
+  const glowRef = useRef<THREE.MeshBasicMaterial>(null!)
   const targetY = useRef(0)
   const currentY = useRef(0)
 
@@ -31,9 +32,30 @@ function Cube({
   const edgeColor = useMemo(() => BLUE.clone().lerp(PURPLE, index / Math.max(1, total)), [index, total])
 
   useFrame((_, delta) => {
-    if (!groupRef.current) return
-    const mx = mouseRef.current.x * MOUSE_INFLUENCE
-    const mz = -mouseRef.current.y * MOUSE_INFLUENCE
+    if (!groupRef.current || !meshRef.current) return
+    
+    // Isometric mapping:
+    // Screen X,Y -> Grid U,V
+    // Right (1,0) -> (1, 1)  [+X, +Z]
+    // Top (0,1) -> (1, -1)   [+X, -Z]
+    
+    // Scale factor to cover the grid
+    const scale = MOUSE_INFLUENCE
+
+    // Use direct values (no inversion needed if Y is Top=+1)
+    const rawX = mouseRef.current.x
+    const rawY = mouseRef.current.y 
+
+    const mx = (rawX + rawY) * scale
+    const mz = (rawX - rawY) * scale
+
+    // Optimization: Skip heavy math if cube is far away
+    // Using Manhattan distance for cheaper check
+    if (Math.abs(px - mx) > 8 || Math.abs(pz - mz) > 8) {
+        groupRef.current.scale.setScalar(0)
+        return
+    }
+
     const dist = Math.sqrt((px - mx) ** 2 + (pz - mz) ** 2)
     
     // Gaussian-like falloff for smoother "wave"
@@ -47,7 +69,7 @@ function Cube({
     const influence = Math.pow(rawInfluence, 2)
     
     // Target Y rises with influence
-    targetY.current = py + influence * maxRise
+    targetY.current = influence * maxRise // Relative to group
 
     // Target Scale grows from 0 to 1 with influence
     // Small threshold to keep them completely invisible when far
@@ -60,9 +82,42 @@ function Cube({
     const currentScale = groupRef.current.scale.x
     const newScale = currentScale + (targetScale - currentScale) * delta * 10
 
-    groupRef.current.position.y = currentY.current
+    // Group handles visibility/scale only (positions stay fixed at grid points)
     groupRef.current.scale.setScalar(newScale)
+    
+    // Mesh handles the rising animation
+    meshRef.current.position.y = currentY.current
+    
+    // Glow opacity follows influence
+    if (glowRef.current) {
+        glowRef.current.opacity = Math.min(1, influence * 1.5)
+    }
   })
+
+  return (
+    <group ref={groupRef} position={position}>
+      {/* Moving Cube */}
+      <mesh ref={meshRef}>
+        <boxGeometry args={[1, 1, 1]} />
+        <meshBasicMaterial color="#000000" transparent opacity={0.92} />
+        <Edges color={edgeColor} scale={1.02} threshold={15} />
+      </mesh>
+      
+      {/* Stationary Glow Floor */}
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.55, 0]}>
+         <planeGeometry args={[1.2, 1.2]} />
+         <meshBasicMaterial 
+            ref={glowRef}
+            color={edgeColor} 
+            transparent 
+            opacity={0} 
+            side={THREE.DoubleSide}
+            blending={THREE.AdditiveBlending}
+            depthWrite={false}
+         />
+      </mesh>
+    </group>
+  )
 
   return (
     <group ref={groupRef} position={position}>
@@ -126,7 +181,8 @@ function CubesGrid({ mouseRef }: { mouseRef: React.MutableRefObject<{ x: number;
   }, [])
 
   return (
-    <group rotation={[0.4, 0, 0]} position={[0, -2, 0]}>
+    // Isometric-ish rotation: 45deg Y rotation makes it a diamond grid
+    <group rotation={[Math.PI / 8, Math.PI / 4, 0]} position={[0, -2, 0]}>
       <Stars />
       {positions.map((pos, i) => (
         <Cube key={i} position={pos} mouseRef={mouseRef} index={i} total={positions.length} />

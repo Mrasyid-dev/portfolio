@@ -12,43 +12,45 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-white dark:bg-transparent transition-colors duration-300">
       <Navbar />
-      <section className="py-20 bg-black/5 dark:bg-black/15 transition-colors duration-300 min-h-screen">
-        <div className="pt-24 pb-16">
+      <section className="py-12 md:py-20 bg-black/5 dark:bg-black/15 transition-colors duration-300 min-h-screen">
+        <div className="pt-20 md:pt-24 pb-10 md:pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionTitle
               title={t.about.title}
               subtitle={t.about.subtitle}
             />
 
-            <div className="bg-white/70 dark:bg-white/5 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-lg border border-white/20 dark:border-white/10 space-y-8 transition-colors duration-300">
+            <div className="bg-white/70 dark:bg-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-12 shadow-lg border border-white/20 dark:border-white/10 space-y-10 md:space-y-12 transition-colors duration-300">
+              {/* Biography Section First */}
               <div>
-                <h3 className="text-2xl font-bold text-navy-900 dark:text-white mb-4">{t.about.education}</h3>
-                <div className="bg-white/40 dark:bg-white/5 rounded-xl p-6 border border-white/20 dark:border-white/10 transition-colors duration-300">
-                <h4 className="text-xl font-semibold text-navy-900 dark:text-white mb-2">
-                  Universitas Sebelas Maret (UNS)
-                </h4>
-                <p className="text-gray-700 dark:text-gray-200">{t.about.educationDegree}</p>
-                <p className="text-gray-600 dark:text-gray-400 mt-2">
-                  {t.about.educationGPA}
-                </p>
-                <p className="text-gray-600 dark:text-gray-400 mt-2">
-                  {t.about.educationDescription}
-                </p>
+                <h3 className="text-2xl font-bold text-navy-900 dark:text-white mb-6 border-b border-navy-100 dark:border-white/10 pb-2 inline-block">
+                  {t.about.biography}
+                </h3>
+                <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed md:text-lg">
+                  <p>{t.about.aboutMeText1}</p>
+                  <p>{t.about.aboutMeText2}</p>
+                  <p>{t.about.aboutMeText3}</p>
+                </div>
               </div>
-            </div>
 
-            <div>
-              <h3 className="text-2xl font-bold text-navy-900 dark:text-white mb-4">{t.about.aboutMe}</h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                {t.about.aboutMeText1}
-              </p>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                {t.about.aboutMeText2}
-              </p>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                {t.about.aboutMeText3}
-              </p>
-            </div>
+              {/* Education Section Second */}
+              <div>
+                <h3 className="text-2xl font-bold text-navy-900 dark:text-white mb-6 border-b border-navy-100 dark:border-white/10 pb-2 inline-block">
+                  {t.about.education}
+                </h3>
+                <div className="bg-white/40 dark:bg-white/5 rounded-xl p-6 border border-white/20 dark:border-white/10 transition-colors duration-300">
+                  <h4 className="text-xl font-semibold text-navy-900 dark:text-white mb-2">
+                    Universitas Sebelas Maret (UNS)
+                  </h4>
+                  <p className="text-gray-700 dark:text-gray-200">{t.about.educationDegree}</p>
+                  <p className="text-gray-600 dark:text-gray-400 mt-2 font-medium">
+                    {t.about.educationGPA}
+                  </p>
+                  <p className="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
+                    {t.about.educationDescription}
+                  </p>
+                </div>
+              </div>
 
             <div>
               <h3 className="text-2xl font-bold text-navy-900 dark:text-white mb-4">{t.about.skillsCompetence}</h3>

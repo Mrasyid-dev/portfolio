@@ -7,100 +7,90 @@ import ProjectCard from '@/components/ProjectCard'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 const projects = [
-  // TIER 1: HERO PROJECTS (Enterprise-Level)
+  // TIER 1: HERO PROJECTS (Enterprise-Level & AI-Native)
   {
     title: {
-      id: 'Order Management System dengan OCR & Bot Integration',
-      en: 'Order Management System with OCR & Bot Integration',
+      id: 'Enterprise POS System',
+      en: 'Enterprise POS System',
     },
     tier: 'hero',
     tools: [
-      'Node.js', 
-      'Express', 
-      'React', 
-      'Vite', 
-      'Prisma', 
-      'PostgreSQL', 
-      'Google Cloud Vision API', 
-      'Telegram/WhatsApp Bot',
-      'TailwindCSS'
-    ],
-    problem: {
-      id: 'Sistem manajemen pesanan yang membutuhkan input cepat via chat dan ekstraksi data otomatis dari struk belanja. Sistem harus mendukung dual-mode: Business Mode (manajemen order) dan Personal Mode (pencatatan pengeluaran).',
-      en: 'Order management system requiring quick input via chat and automatic data extraction from receipts. System must support dual-mode: Business Mode (order management) and Personal Mode (expense tracking).',
-    },
-    solution: {
-      id: 'Membangun sistem full-stack dengan integrasi OCR (Google Cloud Vision) untuk scan struk otomatis, dan Bot (Telegram/WhatsApp) untuk input data via chat. Backend menggunakan Express & Prisma untuk manajemen data yang robust, serta Frontend React untuk dashboard interaktif real-time.',
-      en: 'Built full-stack system with OCR integration (Google Cloud Vision) for automatic receipt scanning, and Bot (Telegram/WhatsApp) for chat-based data input. Backend uses Express & Prisma for robust data management, with React Frontend for interactive real-time dashboard.',
-    },
-    impact: {
-      id: 'Mempercepat proses input data pesanan hingga 80% melalui fitur scan struk dan bot chat. Memberikan visibilitas real-time terhadap arus kas dan inventori bisnis maupun personal.',
-      en: 'Accelerated order input process by up to 80% through receipt scanning and chat bot features. Provided real-time visibility into business and personal cash flow and inventory.',
-    },
-    demoLink: 'https://order-management-system-frontend-or.vercel.app/',
-    githubLink: 'https://github.com/Mrasyid-dev/order-management-system',
-  },
-  {
-    title: {
-      id: 'Financial Reporting System (Performance Optimized)',
-      en: 'Financial Reporting System (Performance Optimized)',
-    },
-    tier: 'hero',
-    tools: [
-      'Go',
-      'Gin',
+      'Java Spring Boot',
+      'Go (Golang)',
       'PostgreSQL',
-      'PL/pgSQL',
-      'Next.js 14',
-      'TypeScript',
-      'Caching',
-      'Performance Optimization'
+      'ActiveMQ',
+      'AI-Assisted Diagnostics'
     ],
     problem: {
-      id: 'Sistem pelaporan keuangan dengan 100,000+ transaksi mengalami query lambat (450ms) yang menghambat produktivitas. Perlu optimasi database dan caching untuk meningkatkan performa.',
-      en: 'Financial reporting system with 100,000+ transactions experiencing slow queries (450ms) hindering productivity. Required database optimization and caching to improve performance.',
+      id: 'Sistem POS mission-critical yang menangani 15.000+ transaksi harian mengalami hambatan lambatnya import data dan isu stabilitas sesekali saat jam sibuk.',
+      en: 'A mission-critical POS system handling 15,000+ daily transactions suffered from slow dataset imports and occasional stability issues during peak hours.',
     },
     solution: {
-      id: 'Implementasi stored procedures (PL/pgSQL) untuk perhitungan kompleks di database. Menambahkan indexing strategis untuk 70% peningkatan kecepatan query. Implementasi caching dengan Redis untuk 95% improvement (450ms → 5ms). Parallel processing menggunakan Go routines.',
-      en: 'Implemented stored procedures (PL/pgSQL) for complex calculations in database. Added strategic indexing for 70% query speed improvement. Implemented Redis caching for 95% improvement (450ms → 5ms). Parallel processing using Go routines.',
+      id: 'Memanfaatkan diagnostic tools berbasis AI untuk mempercepat proses debugging kompleks dan mengeksekusi optimasi query PostgreSQL mendalam. Mengimplementasikan validasi data multi-layer melalui mekanisme transaction rollback.',
+      en: 'Leveraged AI-assisted diagnostic tools for rapid complex debugging and executed deep PostgreSQL query optimizations. Implemented multi-layer data validation with transaction rollback mechanisms.',
     },
     impact: {
-      id: 'Mencapai peningkatan performa 10x lebih cepat. Query utama dari 450ms menjadi 5ms (95% improvement). Mampu handle 100,000+ transaksi dengan response time konsisten dibawah 10ms.',
-      en: 'Achieved 10x performance improvement. Main queries from 450ms to 5ms (95% improvement). Able to handle 100,000+ transactions with consistent response time under 10ms.',
-    },
-    demoLink: 'https://financial-reporting-system.vercel.app/',
-    githubLink: 'https://github.com/Mrasyid-dev/financial-reporting-system',
-  },
-  {
-    title: {
-      id: 'POS System (Point of Sale)',
-      en: 'POS System (Point of Sale)',
-    },
-    tier: 'hero',
-    tools: [
-      'Go',
-      'sqlc',
-      'pgx',
-      'Next.js 14',
-      'TypeScript',
-      'Docker',
-      'OpenAPI',
-      'PostgreSQL'
-    ],
-    problem: {
-      id: 'Bisnis retail membutuhkan sistem kasir modern yang type-safe, mudah di-deploy, dan memiliki kontrol akses berbasis role. Sistem harus mendukung manajemen inventori real-time dan reporting.',
-      en: 'Retail business needs modern, type-safe POS system that is easy to deploy and has role-based access control. System must support real-time inventory management and reporting.',
-    },
-    solution: {
-      id: 'Membangun POS system dengan Go backend menggunakan sqlc untuk type-safe database queries. Implementasi pgx untuk performa database optimal. Frontend Next.js 14 untuk UI responsive. Docker containerization untuk deployment mudah. OpenAPI spec untuk dokumentasi API lengkap.',
-      en: 'Built POS system with Go backend using sqlc for type-safe database queries. Implemented pgx for optimal database performance. Next.js 14 frontend for responsive UI. Docker containerization for easy deployment. OpenAPI spec for complete API documentation.',
-    },
-    impact: {
-      id: 'Menyediakan solusi POS production-ready dengan type-safety penuh, mengurangi bug runtime. Docker setup memudahkan deployment di berbagai environment. Role-based access meningkatkan keamanan sistem.',
-      en: 'Provided production-ready POS solution with full type-safety, reducing runtime bugs. Docker setup simplified deployment across various environments. Role-based access enhanced system security.',
+      id: 'Berhasil memangkas latensi pemrosesan data historis sebesar 95% (dari 30 menit menjadi 1 menit). Stabil menangani lebih dari 15rb+ transaksi harian dengan margin error rate di angka fiktif <0.1%.',
+      en: 'Drastically reduced data processing latency by 95% (30 mins to 1 min). Handled 15k+ daily transactions seamlessly with a virtually non-existent <0.1% error rate.',
     },
     demoLink: 'https://pos-system-seven-pied.vercel.app/',
-    githubLink: 'https://github.com/Mrasyid-dev/pos-system',
+    githubLink: '#',
+  },
+  {
+    title: {
+      id: 'Qalam (Digital Dashboard)',
+      en: 'Qalam (Digital Dashboard)',
+    },
+    tier: 'hero',
+    tools: [
+      'Go (Golang)',
+      'Antygravity (AI-Agent)',
+      'Cursor',
+      'PostgreSQL',
+      'Next.js 14'
+    ],
+    problem: {
+      id: 'Kebutuhan krusial akan rancangan digital management dashboard scalable, berkinerja mutakhir, yang ditargetkan rilis pada tenggat waktu agresif tanpa sama sekali mengorbankan kualitas clean architecture.',
+      en: 'Needed a scalable, high-performance digital management dashboard built under an aggressive timeline without compromising architectural cleanliness.',
+    },
+    solution: {
+      id: 'Direkayasa dan bermanuver menggunakan optimalisasi workflow AI-agent (Antygravity) sebagai pondasi cepat dalam men-deploy platform backend Go (Golang) yang super gesit. 100% konsisten membentengi kebersihan arsitektur sistem sedari hari pertama pengerjaan.',
+      en: 'Engineered utilizing advanced AI-agent workflows (Antygravity) to rapidly blueprint and deploy a lightning-fast Go backend. Maintained a 100% clean architecture from day one.',
+    },
+    impact: {
+      id: 'Menghantarkan performa dashboard level-enterprise berskala 2x lebih kompetitif. Nol menimbun tech debt di setiap fungsional sistem sekaligus berujung memuluskan iterasi pengolahan data masa depan.',
+      en: 'Delivered an enterprise-grade digital dashboard 2x faster than traditional development cycles. Ensured zero technical debt and seamless data iteration.',
+    },
+    demoLink: 'https://qalam-gamma.vercel.app/',
+    githubLink: '#',
+  },
+  {
+    title: {
+      id: 'BONBON (SaaS Platform)',
+      en: 'BONBON (SaaS Platform)',
+    },
+    tier: 'hero',
+    tools: [
+      'Next.js 14',
+      'React Native',
+      'PostgreSQL',
+      'Docker',
+      'AI-Driven Workflows'
+    ],
+    problem: {
+      id: 'Tantangan men-develop core internal untuk massive SaaS platform yang menuntut pondasi cloud berketahanan tinggi agar dapat dihandalkan melawan user-load lalu-lintas yang padat, bahkan dituntut iterasi perilisan fitur yang serba berkesinambungan.',
+      en: 'Building a massive SaaS product that requires a resilient cloud architecture capable of handling highly concurrent user loads while iterating features rapidly.',
+    },
+    solution: {
+      id: 'Merumuskan standarisasi skalabilitas dasar arsitektur internal BONBON sedari baris kode 0 (from the ground up). Sengaja mengimplementasi dukungan teknologi kapabilitas AI-assist ke struktur flow pengembangan demi meroketkan penyebaran update fitur cepat bebas ancaman memicu fatal (Zero regression threat).',
+      en: 'Architected BONBON from the ground up prioritizing scalability and development workflow efficiency. Integrated AI capabilities to accelerate feature deployments without regressions.',
+    },
+    impact: {
+      id: 'Eksistensi permanen sebuah pondasi SaaS yang sungguh scalable. Terbukti merealisasikan ekspektasi efisien engineering beraliran AI-Native yang mampu meredam kekhawatiran disrupsi skalabilitas versus proses rilis agresif tak terhindarkan.',
+      en: 'Established a highly scalable SaaS foundation. Proved the viability of an AI-Native engineering approach by balancing aggressive product rollouts with future-proof architecture.',
+    },
+    demoLink: 'https://order-management-system-frontend-or.vercel.app/',
+    githubLink: '#',
   },
 
   // TIER 2: FULL-STACK APPLICATIONS

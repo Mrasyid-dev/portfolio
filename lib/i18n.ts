@@ -15,9 +15,9 @@ export const translations = {
     },
     // Hero Section
     hero: {
-      title: 'Backend & Database Engineer',
+      title: 'AI-Native Backend Engineer & System Architect',
       description:
-        'Keahlian dalam Java Spring Boot, Golang, PostgreSQL, Optimasi SQL, System Debugging, dan Aplikasi Enterprise.',
+        'Menjembatani keandalan skala Enterprise dan kecepatan Startup. Saya memanfaatkan workflow pengembangan berbasis AI untuk merancang dan membangun sistem Go, Java, dan PostgreSQL berkinerja tinggi 2x lebih cepat—tanpa kompromi pada stabilitas.',
       contactMe: 'Hubungi Saya',
       downloadCV: 'Unduh CV',
       metrics: {
@@ -39,8 +39,8 @@ export const translations = {
     },
     // Freelance Section
     freelance: {
-      title: 'Tersedia untuk Proyek Freelance',
-      subtitle: 'Spesialisasi dalam Backend Development, Database Optimization, dan Enterprise System Solutions. Mari bangun sesuatu yang hebat bersama.',
+      title: 'Bangun dengan Benar. 2x Lebih Cepat.',
+      subtitle: 'Pendekatan engineer AI-Native saya berdampak langsung pada efisiensi biaya dan waktu yang signifikan untuk bisnis Anda tanpa menumpuk technical debt. Baik Anda startup internasional yang membutuhkan iterasi SaaS yang cepat maupun enterprise yang menuntut arsitektur high-concurrency, mari berkolaborasi.',
       getInTouch: 'Hubungi Saya',
       downloadCV: 'Unduh CV',
       availability: 'Terbuka untuk proyek jangka pendek dan panjang',
@@ -55,13 +55,13 @@ export const translations = {
       educationGPA: 'IPK 3.37 | 2014 - 2020',
       educationDescription:
         'Selama masa kuliah, saya mempelajari berbagai aspek dalam pengembangan perangkat lunak, mulai dari konsep dasar pemrograman hingga pengembangan aplikasi enterprise. Fokus utama saya adalah pada pengembangan backend dan manajemen database, yang menjadi fondasi kuat untuk karir saya sebagai Backend Developer.',
-      aboutMe: 'Tentang Saya',
+      biography: 'Biografi Profesional',
       aboutMeText1:
-        'Saya adalah seorang Backend Engineer dengan pengalaman bekerja pada sistem enterprise yang berfokus pada stabilitas data, keandalan sistem, dan proses bisnis yang berjalan setiap hari. Dalam pekerjaan saya, saya banyak terlibat dalam pemeliharaan sistem yang sudah berjalan, perbaikan bug, serta penanganan data bermasalah pada sistem berskala besar.',
+        'Fondasi engineering saya ditempa melalui sistem Enterprise Optical POS yang kompleks, di mana memproses 15.000+ transaksi harian dengan error rate <0.1% adalah standar dasar, bukan sekadar tujuan. Hari ini, saya telah bertransformasi menjadi seorang AI-Native Engineer, mendefinisikan ulang kecepatan dalam proses pengembangan software modern.',
       aboutMeText2:
-        'Sebagian besar pekerjaan saya berkaitan dengan backend dan database, terutama pada sistem POS yang bersifat business-critical. Saya terbiasa menangani proses validasi data, perbaikan query SQL, serta memastikan data transaksi dan laporan tetap konsisten dan dapat dipercaya oleh pengguna.',
+        'Dengan mengintegrasikan workflow AI tingkat lanjut seperti Antygravity dan Cursor ke dalam proses development inti saya, saya membangun platform SaaS terukur (BONBON) dan digital dashboard berperforma tinggi (Qalam) dalam waktu yang jauh lebih singkat.',
       aboutMeText3:
-        'Selain mengerjakan fitur, saya juga sering terlibat dalam analisis dampak perubahan pada sistem yang sudah berjalan, termasuk perbaikan data existing dan penanganan incident produksi. Pengalaman ini membentuk cara kerja saya yang lebih berhati-hati, terstruktur, dan berorientasi pada stabilitas jangka panjang. Saya memiliki pengalaman menggunakan Java dan Golang dalam konteks backend, serta memahami frontend sebagai bagian pendukung untuk memastikan alur aplikasi berjalan dengan baik. Saat ini, saya terus mengembangkan pemahaman saya tentang sistem backend yang kompleks dan data-intensive melalui pekerjaan profesional maupun personal project.',
+        'Walaupun keahlian inti saya terletak pada arsitektur backend yang kokoh dengan Go dan Java, saya menggunakan kemampuan AI-agent untuk menjembatani pengembangan sisi frontend—menghasilkan antarmuka yang dipoles dan responsif di React dan Next.js dengan presisi yang sama seperti sistem database saya. Filosofi kerja saya dibangun di atas dua pilar: Kecepatan Pengiriman (Speed of Delivery) yang tak kenal kompromi yang didukung oleh AI, dan Keandalan Sistem (System Reliability) yang berakar dari pengalaman bertahun-tahun di pengembangan arsitektur enterprise backend.',
       skillsCompetence: 'Keahlian & Kompetensi',
       backendDev: 'Backend Development',
       backendDevDesc:
@@ -98,15 +98,16 @@ export const translations = {
     },
     // Skills Page
     skills: {
-      title: 'Keahlian',
-      subtitle: 'Kompetensi teknis dalam pengembangan backend, manajemen database, frontend modern, dan operasi sistem',
+      title: 'Keahlian & Tools',
+      subtitle: 'Kompetensi teknis yang mencakup arsitektur backend, manajemen database, dan workflow AI-Native',
       categories: {
         backend: 'Backend & Programming',
         database: 'Database & Data Processing',
-        messaging: 'Messaging, Integration & Infrastructure',
-        frontend: 'Frontend Development',
+        messaging: 'Messaging & Integration',
+        frontend: 'Mobile & Web Frontend',
         toolsDevOps: 'Tools & DevOps',
         specialized: 'Specialized Skills',
+        aiWorkflow: 'AI-Native Workflow',
       },
     },
     // Projects Page
@@ -122,57 +123,54 @@ export const translations = {
     },
     // Enterprise POS Case Study
     enterprisePOS: {
-      title: 'Enterprise POS System — Data Reliability & System Stability',
-      contextTitle: 'Context',
-      context: 'Saya bekerja pada sistem POS enterprise yang dikembangkan untuk perusahaan yang bergerak di bidang optik (kacamata, lensa, dan softlens). Sistem ini digunakan untuk mendukung operasional bisnis dan menangani transaksi harian dalam jumlah besar, serta menjadi dasar pelaporan operasional dan keuangan.',
+      title: 'Enterprise POS System — High-Volume Point of Sale Architecture',
+      contextTitle: 'Konteks',
+      context: 'Saya pernah menangani sistem POS enterprise yang dikembangkan untuk perusahaan yang bergerak di bidang industri optik (kacamata, lensa, dan soft contact lenses). Sistem ini mendukung kegiatan operasional bisnis secara luas, memproses berbagai volume transaksi harian tingkat tinggi, serta menjadi dasar pelaporan operasional dan finansial inti.',
       problems: {
         title: 'Masalah',
         items: [
-          'Transaksi POS gagal terbentuk saat jam sibuk',
-          'Proses impor data massal sangat lambat (30 menit untuk batch import)',
-          'Data yang tidak konsisten berdampak langsung ke laporan bisnis klien',
+          'Transaksi POS reguler sering kali gagal di luar dugaan pada saat jam operasional padat',
+          'Proses import penarikan data secara massal berlangsung amat lambat (30 menit spesifik untuk batch besar)',
+          'Munculnya kendala dari in-konsistensi data yang dapat memberatkan akurasi dan kredibilitas laporan bisnis internal',
         ],
       },
       whatIDid: {
         title: 'Apa yang Saya Lakukan',
         items: [
-          'Menangani perbaikan dan pemeliharaan backend sistem POS enterprise',
-          'Mengoptimalkan query SQL kompleks untuk batch import (15,000+ records)',
-          'Mengimplementasikan stored function PostgreSQL untuk validasi data multi-layer',
-          'Memastikan data transaksi tervalidasi dan tersimpan dengan benar menggunakan transaction rollback',
-          'Mengoptimalkan proses impor data massal dengan indexing dan query tuning',
-          'Menangani incident produksi dan memastikan data dapat diproses ulang dengan aman via ActiveMQ',
-          'Menggunakan EXPLAIN ANALYZE untuk optimasi query performance',
+          'Mendominasi manajemen arsitektur scaling serta sistem orkestrasi di infrastruktur POS berskala mission-critical',
+          'Intens memanfaatkan tools diagnostik AI-assisted dalam percepatan analisis debugging logic yang menimbun',
+          'Mengeksekusi langkah agresif optimasi PostgreSQL query secara mendalam buat meminimalisir waktu penundaan latensi memproses info',
+          'Mengimplementasikan stored functions murni PostgreSQL untuk tahap-demi-tahap validasi check data berlapis',
+          'Melindungi integritas proses transaksi valid melalui pengaturan mechanism transaction rollback',
         ],
       },
       impact: {
         title: 'Dampak',
         items: [
-          'Waktu proses impor data berkurang drastis: dari 30 menit menjadi 1 menit (95% improvement)',
-          'Sistem POS lebih stabil saat jam operasional tinggi dengan uptime 99.5%+',
-          'Data laporan menjadi lebih akurat dengan error rate <0.1%',
-          'Berhasil menangani 15,000+ transaksi per hari tanpa error',
-          'Kepercayaan klien terhadap sistem meningkat signifikan',
+          'Tingkat latensi di area pemrosesan import database berkurang tajam sampai dengan 95% secara empiris (Semula waktu 30 Menit ke kisaran 1 Menit saja)',
+          'Ketahanan dari stabilitas infrastruktur mampu menjaga pemrosesan secara kontinu untuk minimal 15.000 transaksi tiap harinya',
+          'Mencatatkan dan memastikan rasio minimal error selalu tercapai secara stabil di ukuran statis <0.1% untuk bisnis report fundamental',
+          'Kenaikan yang fantastis terhadap taraf kepuasan keyakinan dari perspektif klien sistem',
         ],
       },
       technicalImplementation: {
-        title: 'Technical Implementation',
+        title: 'Implementasi Teknis',
         sqlOptimization: {
-          title: 'SQL Optimization',
+          title: 'Optimasi SQL',
           items: [
-            'Stored functions untuk validasi multi-layer',
-            'Index optimization untuk query performance',
-            'EXPLAIN ANALYZE untuk query tuning',
-            'Batch processing untuk 15k+ records',
+            'Proses indexing & tuning query mutakhir berbasis support AI workflow development tool',
+            'Penggunaan efisien pada stored function guna sinkronasi validasi proses data berlapis',
+            'Eksploitasi fungsi bawaan EXPLAIN ANALYZE demi investigasi pencarian sebab query mandek',
+            'Kapasitas komputasi bulk batch process untuk menjangkau skala pelaporan 15k+ records lebih sekuensial',
           ],
         },
         systemReliability: {
-          title: 'System Reliability',
+          title: 'Keandalan Sistem',
           items: [
-            'Transaction rollback mechanism',
-            'ActiveMQ untuk reprocess failed transactions',
-            'Data validation & consistency checks',
-            'Error handling & logging',
+            'Struktur perlindungan pertahanan untuk pembatalan eksekusi database melalui mekanisme Transaction rollback',
+            'Mengerahkan platform service ActiveMQ pada penuntasan resiko error lewat fitur asinkron re-process transaction',
+            'Sistem pengecekan tahap akhir integrasi kestabilan validasi & sinkronisasi data berlapis',
+            'Log error tracking sistem berformat workflow AI-driven',
           ],
         },
       },
@@ -230,9 +228,9 @@ export const translations = {
     },
     // Hero Section
     hero: {
-      title: 'Backend & Database Engineer',
+      title: 'AI-Native Backend Engineer & System Architect',
       description:
-        'Expertise in Java Spring Boot, Golang, PostgreSQL, SQL Optimization, System Debugging, and Enterprise Applications.',
+        'Bridging the gap between Enterprise-grade reliability and startup velocity. I leverage AI-assisted development workflows to architect and ship high-performance Go, Java, and PostgreSQL systems 2x faster—with zero compromise on stability.',
       contactMe: 'Contact Me',
       downloadCV: 'Download CV',
       metrics: {
@@ -254,10 +252,10 @@ export const translations = {
     },
     // Freelance Section
     freelance: {
-      title: 'Available for Freelance Projects',
-      subtitle: 'Specialized in Backend Development, Database Optimization, and Enterprise System Solutions. Let\'s build something great together.',
-      getInTouch: 'Get in Touch',
-      downloadCV: 'Download CV',
+      title: 'Build it Right. Build it 2x Faster.',
+      subtitle: 'My AI-Native engineering approach translates directly into significant cost and time efficiency for your business without accumulating technical debt. Whether you are an international startup needing rapid SaaS delivery or an enterprise demanding high-concurrency architecture, let\'s collaborate.',
+      getInTouch: 'Let\'s Build Together',
+      downloadCV: 'Schedule a Tech Chat',
       availability: 'Open to both short-term and long-term projects',
       location: 'Remote work preferred • Available for Indonesian and International clients',
     },
@@ -270,13 +268,13 @@ export const translations = {
       educationGPA: 'GPA 3.37 | 2014 - 2020',
       educationDescription:
         'During my studies, I learned various aspects of software development, from basic programming concepts to enterprise application development. My main focus was on backend development and database management, which became a strong foundation for my career as a Backend Developer.',
-      aboutMe: 'About Me',
+      biography: 'Professional Biography',
       aboutMeText1:
-        'I am a Backend Engineer with experience working on enterprise systems that focus on data reliability, system stability, and day-to-day business operations. My work mainly involves maintaining existing systems, fixing bugs, and handling data-related issues in large-scale applications.',
+        'My engineering foundation was forged in the trenches of complex Enterprise Optical POS systems, where processing 15,000+ daily transactions with a <0.1% error rate is the baseline, not the goal. Today, I have evolved into an AI-Native Engineer, completely redefining how modern software is built and shipped.',
       aboutMeText2:
-        'Most of my responsibilities are backend and database–oriented, particularly in business-critical POS systems. I regularly work with data validation, SQL query improvements, and ensuring that transaction and reporting data remain accurate and reliable.',
+        'By integrating advanced AI-agent workflows like Antygravity and Cursor into my core development process, I build scalable SaaS platforms (BONBON) and high-performance digital dashboards (Qalam) at unprecedented speeds.',
       aboutMeText3:
-        'In addition to feature development, I am often involved in impact analysis for changes within live systems, including data corrections and production incident handling. These experiences have shaped my approach to be more cautious, structured, and focused on long-term system stability. I have experience using Java and Golang in backend contexts and understand frontend as a supporting layer to ensure application flows work as expected. I continue to deepen my understanding of complex, data-intensive backend systems through both professional work and personal projects.',
+        'While my core expertise lies in robust backend architecture with Go and Java, I leverage AI-agent workflows to bridge the gap in frontend development—delivering polished, responsive interfaces in React and Next.js with the same precision as my database systems. My philosophy is built on two pillars: relentless Speed of Delivery powered by AI, and uncompromising System Reliability grounded in years of enterprise experience.',
       skillsCompetence: 'Skills & Competencies',
       backendDev: 'Backend Development',
       backendDevDesc:
@@ -313,15 +311,16 @@ export const translations = {
     },
     // Skills Page
     skills: {
-      title: 'Skills',
-      subtitle: 'Technical competencies across backend development, database management, modern frontend, and system operations',
+      title: 'Skills & Tools',
+      subtitle: 'Technical competencies across backend architecture, database management, and AI-Native workflows',
       categories: {
         backend: 'Backend & Programming',
         database: 'Database & Data Processing',
-        messaging: 'Messaging, Integration & Infrastructure',
-        frontend: 'Frontend Development',
+        messaging: 'Messaging & Integration',
+        frontend: 'Mobile & Web Frontend',
         toolsDevOps: 'Tools & DevOps',
         specialized: 'Specialized Skills',
+        aiWorkflow: 'AI-Native Workflow',
       },
     },
     // Projects Page
@@ -337,7 +336,7 @@ export const translations = {
     },
     // Enterprise POS Case Study
     enterprisePOS: {
-      title: 'Enterprise POS System — Data Reliability & System Stability',
+      title: 'Enterprise POS System — High-Volume Point of Sale Architecture',
       contextTitle: 'Context',
       context: 'I worked on an enterprise POS system developed for a company in the optical industry (glasses, lenses, and soft contact lenses). The system supports business operations, processes high volumes of daily transactions, and serves as the foundation for operational and financial reporting.',
       problems: {
@@ -351,23 +350,20 @@ export const translations = {
       whatIDid: {
         title: 'What I Did',
         items: [
-          'Maintained and improved the backend of the enterprise POS system',
-          'Optimized complex SQL queries for batch import (15,000+ records)',
+          'Masterminded the scaling and orchestration of a mission-critical POS infrastructure',
+          'Leveraged AI-assisted diagnostic tools to accelerate complex debugging',
+          'Executed advanced PostgreSQL query optimizations minimizing processing latency',
           'Implemented PostgreSQL stored functions for multi-layer data validation',
-          'Ensured transaction data was properly validated and stored using transaction rollback',
-          'Optimized bulk data import with indexing and query tuning',
-          'Handled production incidents and safely reprocessed failed data via ActiveMQ',
-          'Used EXPLAIN ANALYZE for query performance optimization',
+          'Ensured transaction data was properly validated using transaction rollback',
         ],
       },
       impact: {
         title: 'Impact',
         items: [
-          'Data import time drastically reduced: from 30 minutes to 1 minute (95% improvement)',
-          'POS system became more stable during peak hours with 99.5%+ uptime',
-          'Business reports became more accurate with <0.1% error rate',
-          'Successfully handled 15,000+ transactions per day without errors',
-          'Client confidence in the system significantly increased',
+          'Data import processing latency reduced organically by 95% (30 min to 1 min)',
+          'High stability maintained processing 15,000+ daily transactions',
+          'Achieved a strict <0.1% error rate on business-critical reports',
+          'Client confidence and system resilience significantly increased',
         ],
       },
       technicalImplementation: {
@@ -375,9 +371,9 @@ export const translations = {
         sqlOptimization: {
           title: 'SQL Optimization',
           items: [
+            'AI-assisted query tuning and indexing',
             'Stored functions for multi-layer validation',
-            'Index optimization for query performance',
-            'EXPLAIN ANALYZE for query tuning',
+            'EXPLAIN ANALYZE for query debugging',
             'Batch processing for 15k+ records',
           ],
         },
@@ -387,7 +383,7 @@ export const translations = {
             'Transaction rollback mechanism',
             'ActiveMQ for reprocessing failed transactions',
             'Data validation & consistency checks',
-            'Error handling & logging',
+            'Error handling & AI-driven logging',
           ],
         },
       },
